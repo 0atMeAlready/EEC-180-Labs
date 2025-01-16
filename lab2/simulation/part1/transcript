@@ -1,44 +1,75 @@
-# Compile of tb_part1.v failed with 2 errors.
-# Compile of lab2_part1.v was successful.
-# 2 compiles, 1 failed with 2 errors.
-# Compile of tb_part1.v failed with 1 errors.
-# Compile of lab2_part1.v was successful.
-# 2 compiles, 1 failed with 1 error.
-# Compile of tb_part1.v failed with 1 errors.
-# Compile of lab2_part1.v was successful.
-# 2 compiles, 1 failed with 1 error.
-# Compile of tb_part1.v failed with 2 errors.
-# Compile of lab2_part1.v was successful.
-# 2 compiles, 1 failed with 2 errors.
-# Compile of tb_part1.v failed with 2 errors.
-# Compile of lab2_part1.v was successful.
-# 2 compiles, 1 failed with 2 errors.
-# Compile of tb_part1.v failed with 2 errors.
-# Compile of lab2_part1.v was successful.
-# 2 compiles, 1 failed with 2 errors.
 # Compile of tb_part1.v was successful.
 # Compile of lab2_part1.v was successful.
 # 2 compiles, 0 failed with no errors.
 vsim -gui work.tb
 # vsim -gui work.tb 
-# Start time: 14:59:16 on Jan 16,2025
+# Start time: 15:09:07 on Jan 16,2025
 # Loading work.tb
 # Loading work.fullAdder
 # ** Warning: (vsim-3017) C:/Users/jhsu2/OneDrive/Documents/UC Davis/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/simulation/part1/tb_part1.v(21): [TFMPC] - Too few port connections. Expected 5, found 4.
 #    Time: 0 ps  Iteration: 0  Instance: /tb/FA File: C:/Users/jhsu2/OneDrive/Documents/UC Davis/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/synthesis/part1/lab2_part1.v
 # ** Warning: (vsim-3015) C:/Users/jhsu2/OneDrive/Documents/UC Davis/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/simulation/part1/tb_part1.v(21): [PCDPC] - Port size (1) does not match connection size (9) for port 'A'. The port definition is at: C:/Users/jhsu2/OneDrive/Documents/UC Davis/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/synthesis/part1/lab2_part1.v(46).
 #    Time: 0 ps  Iteration: 0  Instance: /tb/FA File: C:/Users/jhsu2/OneDrive/Documents/UC Davis/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/synthesis/part1/lab2_part1.v
-# ** Warning: (vsim-3015) C:/Users/jhsu2/OneDrive/Documents/UC Davis/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/simulation/part1/tb_part1.v(21): [PCDPC] - Port size (1) does not match connection size (2) for port 'B'. The port definition is at: C:/Users/jhsu2/OneDrive/Documents/UC Davis/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/synthesis/part1/lab2_part1.v(47).
-#    Time: 0 ps  Iteration: 0  Instance: /tb/FA File: C:/Users/jhsu2/OneDrive/Documents/UC Davis/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/synthesis/part1/lab2_part1.v
 # ** Error (suppressible): (vsim-3053) C:/Users/jhsu2/OneDrive/Documents/UC Davis/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/simulation/part1/tb_part1.v(21): Illegal output or inout port connection for port 'S'.
 #    Time: 0 ps  Iteration: 0  Instance: /tb/FA File: C:/Users/jhsu2/OneDrive/Documents/UC Davis/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/synthesis/part1/lab2_part1.v
 # ** Warning: (vsim-3722) C:/Users/jhsu2/OneDrive/Documents/UC Davis/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/simulation/part1/tb_part1.v(21): [TFMPC] - Missing connection for port 'Cout'.
 # Error loading design
-# End time: 14:59:16 on Jan 16,2025, Elapsed time: 0:00:00
-# Errors: 1, Warnings: 4
+# End time: 15:09:08 on Jan 16,2025, Elapsed time: 0:00:01
+# Errors: 1, Warnings: 3
+# Compile of tb_part1.v was successful.
+# Compile of lab2_part1.v was successful.
+# 2 compiles, 0 failed with no errors.
+vsim -gui work.tb
+# vsim -gui work.tb 
+# Start time: 15:10:28 on Jan 16,2025
+# Loading work.tb
+# Loading work.fullAdder
+# ** Warning: (vsim-3015) C:/Users/jhsu2/OneDrive/Documents/UC Davis/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/simulation/part1/tb_part1.v(21): [PCDPC] - Port size (1) does not match connection size (9) for port 'A'. The port definition is at: C:/Users/jhsu2/OneDrive/Documents/UC Davis/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/synthesis/part1/lab2_part1.v(46).
+#    Time: 0 ps  Iteration: 0  Instance: /tb/FA File: C:/Users/jhsu2/OneDrive/Documents/UC Davis/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/synthesis/part1/lab2_part1.v
+# ** Error (suppressible): (vsim-3053) C:/Users/jhsu2/OneDrive/Documents/UC Davis/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/simulation/part1/tb_part1.v(21): Illegal output or inout port connection for port 'S'.
+#    Time: 0 ps  Iteration: 0  Instance: /tb/FA File: C:/Users/jhsu2/OneDrive/Documents/UC Davis/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/synthesis/part1/lab2_part1.v
+# ** Error (suppressible): (vsim-3053) C:/Users/jhsu2/OneDrive/Documents/UC Davis/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/simulation/part1/tb_part1.v(21): Illegal output or inout port connection for port 'Cout'.
+#    Time: 0 ps  Iteration: 0  Instance: /tb/FA File: C:/Users/jhsu2/OneDrive/Documents/UC Davis/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/synthesis/part1/lab2_part1.v
+# Error loading design
+# End time: 15:10:29 on Jan 16,2025, Elapsed time: 0:00:01
+# Errors: 2, Warnings: 1
+# Compile of tb_part1.v was successful.
+# Compile of lab2_part1.v was successful.
+# 2 compiles, 0 failed with no errors.
+vsim -gui work.tb
+# vsim -gui work.tb 
+# Start time: 15:11:53 on Jan 16,2025
+# Loading work.tb
+# Loading work.fullAdder
+# ** Warning: (vsim-3015) C:/Users/jhsu2/OneDrive/Documents/UC Davis/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/simulation/part1/tb_part1.v(21): [PCDPC] - Port size (1) does not match connection size (9) for port 'A'. The port definition is at: C:/Users/jhsu2/OneDrive/Documents/UC Davis/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/synthesis/part1/lab2_part1.v(46).
+#    Time: 0 ps  Iteration: 0  Instance: /tb/FA File: C:/Users/jhsu2/OneDrive/Documents/UC Davis/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/synthesis/part1/lab2_part1.v
+# ** Error (suppressible): (vsim-3053) C:/Users/jhsu2/OneDrive/Documents/UC Davis/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/simulation/part1/tb_part1.v(21): Illegal output or inout port connection for port 'S'.
+#    Time: 0 ps  Iteration: 0  Instance: /tb/FA File: C:/Users/jhsu2/OneDrive/Documents/UC Davis/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/synthesis/part1/lab2_part1.v
+# ** Error (suppressible): (vsim-3053) C:/Users/jhsu2/OneDrive/Documents/UC Davis/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/simulation/part1/tb_part1.v(21): Illegal output or inout port connection for port 'Cout'.
+#    Time: 0 ps  Iteration: 0  Instance: /tb/FA File: C:/Users/jhsu2/OneDrive/Documents/UC Davis/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/synthesis/part1/lab2_part1.v
+# Error loading design
+# End time: 15:11:53 on Jan 16,2025, Elapsed time: 0:00:00
+# Errors: 2, Warnings: 1
+# Compile of tb_part1.v was successful.
+# Compile of lab2_part1.v was successful.
+# 2 compiles, 0 failed with no errors.
+vsim -gui work.tb
+# vsim -gui work.tb 
+# Start time: 15:12:32 on Jan 16,2025
+# Loading work.tb
+# Loading work.fullAdder
+# ** Warning: (vsim-3015) C:/Users/jhsu2/OneDrive/Documents/UC Davis/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/simulation/part1/tb_part1.v(21): [PCDPC] - Port size (1) does not match connection size (9) for port 'A'. The port definition is at: C:/Users/jhsu2/OneDrive/Documents/UC Davis/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/synthesis/part1/lab2_part1.v(46).
+#    Time: 0 ps  Iteration: 0  Instance: /tb/FA File: C:/Users/jhsu2/OneDrive/Documents/UC Davis/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/synthesis/part1/lab2_part1.v
+# ** Error (suppressible): (vsim-3053) C:/Users/jhsu2/OneDrive/Documents/UC Davis/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/simulation/part1/tb_part1.v(21): Illegal output or inout port connection for port 'S'.
+#    Time: 0 ps  Iteration: 0  Instance: /tb/FA File: C:/Users/jhsu2/OneDrive/Documents/UC Davis/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/synthesis/part1/lab2_part1.v
+# ** Error (suppressible): (vsim-3053) C:/Users/jhsu2/OneDrive/Documents/UC Davis/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/simulation/part1/tb_part1.v(21): Illegal output or inout port connection for port 'Cout'.
+#    Time: 0 ps  Iteration: 0  Instance: /tb/FA File: C:/Users/jhsu2/OneDrive/Documents/UC Davis/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/synthesis/part1/lab2_part1.v
+# Error loading design
+# End time: 15:12:32 on Jan 16,2025, Elapsed time: 0:00:00
+# Errors: 2, Warnings: 1
 vsim -gui work.tBench
 # vsim -gui work.tBench 
-# Start time: 15:04:10 on Jan 16,2025
+# Start time: 15:12:47 on Jan 16,2025
 # Loading work.tBench
 # Loading work.rippleAdder
 # Loading work.fullAdder
@@ -47,40 +78,45 @@ vsim -gui work.tBench
 # ** Warning: (vsim-3015) C:/Users/jhsu2/OneDrive/Documents/UC Davis/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/simulation/part1/tb_part1.v(16): [PCDPC] - Port size (8) does not match connection size (9) for port 'Cout'. The port definition is at: C:/Users/jhsu2/OneDrive/Documents/UC Davis/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/synthesis/part1/lab2_part1.v(68).
 #    Time: 0 ps  Iteration: 0  Instance: /tBench/UUT File: C:/Users/jhsu2/OneDrive/Documents/UC Davis/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/synthesis/part1/lab2_part1.v
 # Error loading design
-# End time: 15:04:11 on Jan 16,2025, Elapsed time: 0:00:01
+# End time: 15:12:47 on Jan 16,2025, Elapsed time: 0:00:00
 # Errors: 1, Warnings: 1
-vsim -gui work.tb
-# vsim -gui work.tb 
-# Start time: 15:06:52 on Jan 16,2025
-# Loading work.tb
-# Loading work.fullAdder
-# ** Warning: (vsim-3017) C:/Users/jhsu2/OneDrive/Documents/UC Davis/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/simulation/part1/tb_part1.v(21): [TFMPC] - Too few port connections. Expected 5, found 4.
-#    Time: 0 ps  Iteration: 0  Instance: /tb/FA File: C:/Users/jhsu2/OneDrive/Documents/UC Davis/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/synthesis/part1/lab2_part1.v
-# ** Warning: (vsim-3015) C:/Users/jhsu2/OneDrive/Documents/UC Davis/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/simulation/part1/tb_part1.v(21): [PCDPC] - Port size (1) does not match connection size (9) for port 'A'. The port definition is at: C:/Users/jhsu2/OneDrive/Documents/UC Davis/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/synthesis/part1/lab2_part1.v(46).
-#    Time: 0 ps  Iteration: 0  Instance: /tb/FA File: C:/Users/jhsu2/OneDrive/Documents/UC Davis/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/synthesis/part1/lab2_part1.v
-# ** Warning: (vsim-3015) C:/Users/jhsu2/OneDrive/Documents/UC Davis/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/simulation/part1/tb_part1.v(21): [PCDPC] - Port size (1) does not match connection size (2) for port 'B'. The port definition is at: C:/Users/jhsu2/OneDrive/Documents/UC Davis/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/synthesis/part1/lab2_part1.v(47).
-#    Time: 0 ps  Iteration: 0  Instance: /tb/FA File: C:/Users/jhsu2/OneDrive/Documents/UC Davis/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/synthesis/part1/lab2_part1.v
-# ** Error (suppressible): (vsim-3053) C:/Users/jhsu2/OneDrive/Documents/UC Davis/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/simulation/part1/tb_part1.v(21): Illegal output or inout port connection for port 'S'.
-#    Time: 0 ps  Iteration: 0  Instance: /tb/FA File: C:/Users/jhsu2/OneDrive/Documents/UC Davis/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/synthesis/part1/lab2_part1.v
-# ** Warning: (vsim-3722) C:/Users/jhsu2/OneDrive/Documents/UC Davis/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/simulation/part1/tb_part1.v(21): [TFMPC] - Missing connection for port 'Cout'.
-# Error loading design
-# End time: 15:06:52 on Jan 16,2025, Elapsed time: 0:00:00
-# Errors: 1, Warnings: 4
 # Compile of tb_part1.v was successful.
 # Compile of lab2_part1.v was successful.
 # 2 compiles, 0 failed with no errors.
 vsim -gui work.tb
 # vsim -gui work.tb 
-# Start time: 15:07:32 on Jan 16,2025
+# Start time: 15:14:42 on Jan 16,2025
 # Loading work.tb
 # Loading work.fullAdder
-# ** Warning: (vsim-3017) C:/Users/jhsu2/OneDrive/Documents/UC Davis/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/simulation/part1/tb_part1.v(21): [TFMPC] - Too few port connections. Expected 5, found 4.
-#    Time: 0 ps  Iteration: 0  Instance: /tb/FA File: C:/Users/jhsu2/OneDrive/Documents/UC Davis/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/synthesis/part1/lab2_part1.v
 # ** Warning: (vsim-3015) C:/Users/jhsu2/OneDrive/Documents/UC Davis/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/simulation/part1/tb_part1.v(21): [PCDPC] - Port size (1) does not match connection size (9) for port 'A'. The port definition is at: C:/Users/jhsu2/OneDrive/Documents/UC Davis/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/synthesis/part1/lab2_part1.v(46).
 #    Time: 0 ps  Iteration: 0  Instance: /tb/FA File: C:/Users/jhsu2/OneDrive/Documents/UC Davis/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/synthesis/part1/lab2_part1.v
 # ** Error (suppressible): (vsim-3053) C:/Users/jhsu2/OneDrive/Documents/UC Davis/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/simulation/part1/tb_part1.v(21): Illegal output or inout port connection for port 'S'.
 #    Time: 0 ps  Iteration: 0  Instance: /tb/FA File: C:/Users/jhsu2/OneDrive/Documents/UC Davis/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/synthesis/part1/lab2_part1.v
-# ** Warning: (vsim-3722) C:/Users/jhsu2/OneDrive/Documents/UC Davis/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/simulation/part1/tb_part1.v(21): [TFMPC] - Missing connection for port 'Cout'.
+# ** Error (suppressible): (vsim-3053) C:/Users/jhsu2/OneDrive/Documents/UC Davis/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/simulation/part1/tb_part1.v(21): Illegal output or inout port connection for port 'Cout'.
+#    Time: 0 ps  Iteration: 0  Instance: /tb/FA File: C:/Users/jhsu2/OneDrive/Documents/UC Davis/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/synthesis/part1/lab2_part1.v
 # Error loading design
-# End time: 15:07:32 on Jan 16,2025, Elapsed time: 0:00:00
-# Errors: 1, Warnings: 3
+# End time: 15:14:42 on Jan 16,2025, Elapsed time: 0:00:00
+# Errors: 2, Warnings: 1
+# Compile of tb_part1.v was successful.
+# Compile of lab2_part1.v was successful.
+# 2 compiles, 0 failed with no errors.
+vsim -gui work.tb
+# vsim -gui work.tb 
+# Start time: 15:18:04 on Jan 16,2025
+# Loading work.tb
+# Loading work.fullAdder
+# ** Warning: (vsim-3015) C:/Users/jhsu2/OneDrive/Documents/UC Davis/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/simulation/part1/tb_part1.v(21): [PCDPC] - Port size (1) does not match connection size (9) for port 'A'. The port definition is at: C:/Users/jhsu2/OneDrive/Documents/UC Davis/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/synthesis/part1/lab2_part1.v(46).
+#    Time: 0 ps  Iteration: 0  Instance: /tb/FA File: C:/Users/jhsu2/OneDrive/Documents/UC Davis/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/synthesis/part1/lab2_part1.v
+# ** Error (suppressible): (vsim-3053) C:/Users/jhsu2/OneDrive/Documents/UC Davis/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/simulation/part1/tb_part1.v(21): Illegal output or inout port connection for port 'S'.
+#    Time: 0 ps  Iteration: 0  Instance: /tb/FA File: C:/Users/jhsu2/OneDrive/Documents/UC Davis/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/synthesis/part1/lab2_part1.v
+# ** Error (suppressible): (vsim-3053) C:/Users/jhsu2/OneDrive/Documents/UC Davis/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/simulation/part1/tb_part1.v(21): Illegal output or inout port connection for port 'Cout'.
+#    Time: 0 ps  Iteration: 0  Instance: /tb/FA File: C:/Users/jhsu2/OneDrive/Documents/UC Davis/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/synthesis/part1/lab2_part1.v
+# Error loading design
+# End time: 15:18:04 on Jan 16,2025, Elapsed time: 0:00:00
+# Errors: 2, Warnings: 1
+# Compile of tb_part1.v failed with 3 errors.
+# Compile of lab2_part1.v was successful.
+# 2 compiles, 1 failed with 3 errors.
+# Compile of tb_part1.v failed with 3 errors.
+# Compile of lab2_part1.v was successful.
+# 2 compiles, 1 failed with 3 errors.
