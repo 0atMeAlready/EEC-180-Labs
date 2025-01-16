@@ -1,0 +1,52 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dC:/Users/jhsu2/OneDrive/Documents/UC Davis/2024-2025/Winter Quarter/EEC 180/Labs/lab1/simulation/part1
+vpart2
+Z0 !s110 1736469044
+!i10b 1
+!s100 o_FDz9ESjRnO>ZKCLF]J83
+I3IbLc^lg8eCDAJESzFMo82
+Z1 VDg1SIo80bB@j0V0VzS_@n1
+Z2 dC:/Users/jhsu2/OneDrive/Documents/UC Davis/2024-2025/Winter Quarter/EEC 180/Labs/lab1/simulation/part2
+w1736468301
+8C:/Users/jhsu2/OneDrive/Documents/UC Davis/2024-2025/Winter Quarter/EEC 180/Labs/lab1/synthesis/part2/part2.v
+FC:/Users/jhsu2/OneDrive/Documents/UC Davis/2024-2025/Winter Quarter/EEC 180/Labs/lab1/synthesis/part2/part2.v
+L0 6
+Z3 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z4 !s108 1736469044.000000
+!s107 C:/Users/jhsu2/OneDrive/Documents/UC Davis/2024-2025/Winter Quarter/EEC 180/Labs/lab1/synthesis/part2/part2.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/jhsu2/OneDrive/Documents/UC Davis/2024-2025/Winter Quarter/EEC 180/Labs/lab1/synthesis/part2/part2.v|
+!i113 1
+Z5 o-work work
+Z6 tCvgOpt 0
+vtb_part2
+R0
+!i10b 1
+!s100 ^W^cFVPEkFH>l<Hmc1`i<3
+Ihh3HKJTTGBP:HNmLa:4bU2
+R1
+R2
+w1736469040
+8C:/Users/jhsu2/OneDrive/Documents/UC Davis/2024-2025/Winter Quarter/EEC 180/Labs/lab1/simulation/part2/tb_part2.v
+FC:/Users/jhsu2/OneDrive/Documents/UC Davis/2024-2025/Winter Quarter/EEC 180/Labs/lab1/simulation/part2/tb_part2.v
+L0 1
+R3
+r1
+!s85 0
+31
+R4
+!s107 C:/Users/jhsu2/OneDrive/Documents/UC Davis/2024-2025/Winter Quarter/EEC 180/Labs/lab1/simulation/part2/tb_part2.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/jhsu2/OneDrive/Documents/UC Davis/2024-2025/Winter Quarter/EEC 180/Labs/lab1/simulation/part2/tb_part2.v|
+!i113 1
+R5
+R6

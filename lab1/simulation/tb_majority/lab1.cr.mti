@@ -1,0 +1,15 @@
+{C:/Users/jhsu2/OneDrive/Documents/UC Davis/2024-2025/Winter Quarter/EEC 180/Labs/lab1/synthesis/majority/majority.v} {1 {vlog -work work -stats=none {C:/Users/jhsu2/OneDrive/Documents/UC Davis/2024-2025/Winter Quarter/EEC 180/Labs/lab1/synthesis/majority/majority.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module majority
+
+Top level modules:
+	majority
+
+} {} {}} {C:/Users/jhsu2/OneDrive/Documents/UC Davis/2024-2025/Winter Quarter/EEC 180/Labs/lab1/simulation/tb_majority/tb_majority.v} {1 {vlog -work work -stats=none {C:/Users/jhsu2/OneDrive/Documents/UC Davis/2024-2025/Winter Quarter/EEC 180/Labs/lab1/simulation/tb_majority/tb_majority.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module tb_majority
+
+Top level modules:
+	tb_majority
+
+} {} {}}

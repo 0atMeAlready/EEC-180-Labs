@@ -1,0 +1,97 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dC:/Users/jhsu2/OneDrive/Documents/UC Davis/2024-2025/Winter Quarter/EEC 180/Labs/lab1/simulation/part2
+vfullAdder
+Z0 !s110 1737065418
+!i10b 1
+!s100 :i?G7iWNSb^D9ZW8;k@2k1
+I:4cf5SOiKD9QVTX[L=ZH]1
+Z1 VDg1SIo80bB@j0V0VzS_@n1
+Z2 dC:/Users/jhsu2/OneDrive/Documents/UC Davis/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/simulation/part1
+Z3 w1737064313
+Z4 8C:/Users/jhsu2/OneDrive/Documents/UC Davis/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/synthesis/part1/lab2_part1.v
+Z5 FC:/Users/jhsu2/OneDrive/Documents/UC Davis/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/synthesis/part1/lab2_part1.v
+L0 44
+Z6 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z7 !s108 1737065418.000000
+Z8 !s107 C:/Users/jhsu2/OneDrive/Documents/UC Davis/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/synthesis/part1/lab2_part1.v|
+Z9 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/jhsu2/OneDrive/Documents/UC Davis/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/synthesis/part1/lab2_part1.v|
+!i113 1
+Z10 o-work work
+Z11 tCvgOpt 0
+nfull@adder
+vlab2_part1
+R0
+!i10b 1
+!s100 HC7DV]JN4S1ZV5Mo3Jml[3
+ImQX@Kdg2HT???H8eIcBeg1
+R1
+R2
+R3
+R4
+R5
+L0 6
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+R10
+R11
+vrippleAdder
+R0
+!i10b 1
+!s100 7<=L@]`j?W`]Eb8^9llb83
+Ina1imlLCBc7n=9]8KPi0h0
+R1
+R2
+R3
+R4
+R5
+L0 59
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+R10
+R11
+nripple@adder
+vtBench
+!s110 1737059546
+!i10b 1
+!s100 m=GST:V`d6T@TQV]Ek[8]3
+I=RBc3e]H6VCGNCcDAKA@A1
+R1
+R2
+w1737059543
+8C:/Users/jhsu2/OneDrive/Documents/UC Davis/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/simulation/part1/tb_part1.v
+FC:/Users/jhsu2/OneDrive/Documents/UC Davis/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/simulation/part1/tb_part1.v
+L0 1
+R6
+r1
+!s85 0
+31
+!s108 1737059546.000000
+!s107 C:/Users/jhsu2/OneDrive/Documents/UC Davis/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/simulation/part1/tb_part1.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/jhsu2/OneDrive/Documents/UC Davis/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/simulation/part1/tb_part1.v|
+!i113 1
+R10
+R11
+nt@bench

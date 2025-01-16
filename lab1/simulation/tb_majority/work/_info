@@ -1,0 +1,52 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dC:/Users/jhsu2/OneDrive/Documents/UC Davis/2024-2025/Winter Quarter/EEC 180/Labs/lab1/test
+vmajority
+Z0 !s110 1736461004
+!i10b 1
+!s100 gOX13@aKaNBLBFK3EXbf02
+IPVM^i?A07TC[bfV_PECEK1
+Z1 VDg1SIo80bB@j0V0VzS_@n1
+Z2 dC:/Users/jhsu2/OneDrive/Documents/UC Davis/2024-2025/Winter Quarter/EEC 180/Labs/lab1/simulation/tb_majority
+w1736460999
+8C:/Users/jhsu2/OneDrive/Documents/UC Davis/2024-2025/Winter Quarter/EEC 180/Labs/lab1/synthesis/majority/majority.v
+FC:/Users/jhsu2/OneDrive/Documents/UC Davis/2024-2025/Winter Quarter/EEC 180/Labs/lab1/synthesis/majority/majority.v
+L0 6
+Z3 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z4 !s108 1736461004.000000
+!s107 C:/Users/jhsu2/OneDrive/Documents/UC Davis/2024-2025/Winter Quarter/EEC 180/Labs/lab1/synthesis/majority/majority.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/jhsu2/OneDrive/Documents/UC Davis/2024-2025/Winter Quarter/EEC 180/Labs/lab1/synthesis/majority/majority.v|
+!i113 1
+Z5 o-work work
+Z6 tCvgOpt 0
+vtb_majority
+R0
+!i10b 1
+!s100 o<jZ:X`6kl:UY3WNf7`]K0
+I=2X`IP>0UNUE<FT02`<1z0
+R1
+R2
+w1736460443
+8C:/Users/jhsu2/OneDrive/Documents/UC Davis/2024-2025/Winter Quarter/EEC 180/Labs/lab1/simulation/tb_majority/tb_majority.v
+FC:/Users/jhsu2/OneDrive/Documents/UC Davis/2024-2025/Winter Quarter/EEC 180/Labs/lab1/simulation/tb_majority/tb_majority.v
+L0 1
+R3
+r1
+!s85 0
+31
+R4
+!s107 C:/Users/jhsu2/OneDrive/Documents/UC Davis/2024-2025/Winter Quarter/EEC 180/Labs/lab1/simulation/tb_majority/tb_majority.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/jhsu2/OneDrive/Documents/UC Davis/2024-2025/Winter Quarter/EEC 180/Labs/lab1/simulation/tb_majority/tb_majority.v|
+!i113 1
+R5
+R6
