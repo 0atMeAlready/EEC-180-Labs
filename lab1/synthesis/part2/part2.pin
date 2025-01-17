@@ -65,7 +65,7 @@
  -- Pin directions (input, output or bidir) are based on device operating in user mode.
  ---------------------------------------------------------------------------------
 
-Quartus Prime Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
+Quartus Prime Version 19.1.0 Build 670 09/22/2019 SJ Standard Edition
 CHIP  "part2"  ASSIGNED TO AN: 10M50DAF484C7G
 
 Pin Name/Usage               : Location  : Dir.   : I/O Standard      : Voltage : I/O Bank  : User Assignment
@@ -85,7 +85,7 @@ SW[4]                        : A12       : input  : 3.3-V LVTTL       :         
 SW[6]                        : A13       : input  : 3.3-V LVTTL       :         : 7         : Y              
 SW[7]                        : A14       : input  : 3.3-V LVTTL       :         : 7         : Y              
 RESERVED_INPUT_WITH_WEAK_PULLUP : A15       :        :                   :         : 7         :                
-HEX1[7]                      : A16       : output : 3.3-V LVTTL       :         : 7         : Y              
+RESERVED_INPUT_WITH_WEAK_PULLUP : A16       :        :                   :         : 7         :                
 HEX1[4]                      : A17       : output : 3.3-V LVTTL       :         : 7         : Y              
 HEX1[5]                      : A18       : output : 3.3-V LVTTL       :         : 7         : Y              
 HEX2[7]                      : A19       : output : 3.3-V LVTTL       :         : 7         : Y              
@@ -194,7 +194,7 @@ GND                          : D11       : gnd    :                   :         
 SW[2]                        : D12       : input  : 3.3-V LVTTL       :         : 7         : Y              
 LEDR[4]                      : D13       : output : 3.3-V LVTTL       :         : 7         : Y              
 LEDR[7]                      : D14       : output : 3.3-V LVTTL       :         : 7         : Y              
-HEX0[7]                      : D15       : output : 3.3-V LVTTL       :         : 7         : Y              
+RESERVED_INPUT_WITH_WEAK_PULLUP : D15       :        :                   :         : 7         :                
 GND                          : D16       : gnd    :                   :         :           :                
 HEX0[5]                      : D17       : output : 3.3-V LVTTL       :         : 7         : Y              
 HEX1[1]                      : D18       : output : 3.3-V LVTTL       :         : 6         : Y              

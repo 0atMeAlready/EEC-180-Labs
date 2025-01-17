@@ -1,6 +1,6 @@
 Analysis & Synthesis report for part2
-Thu Jan 09 16:18:29 2025
-Quartus Prime Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
+Thu Jan 16 16:28:28 2025
+Quartus Prime Version 19.1.0 Build 670 09/22/2019 SJ Standard Edition
 
 
 ---------------------
@@ -14,9 +14,10 @@ Quartus Prime Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
   6. Analysis & Synthesis Resource Usage Summary
   7. Analysis & Synthesis Resource Utilization by Entity
   8. General Register Statistics
-  9. Post-Synthesis Netlist Statistics for Top Partition
- 10. Elapsed Time Per Partition
- 11. Analysis & Synthesis Messages
+  9. Port Connectivity Checks: "dec_7seg_decoder:u_decoder"
+ 10. Post-Synthesis Netlist Statistics for Top Partition
+ 11. Elapsed Time Per Partition
+ 12. Analysis & Synthesis Messages
 
 
 
@@ -40,26 +41,26 @@ https://fpgasoftware.intel.com/eula.
 
 
 
-+----------------------------------------------------------------------------------+
-; Analysis & Synthesis Summary                                                     ;
-+------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Thu Jan 09 16:18:29 2025       ;
-; Quartus Prime Version              ; 19.1.0 Build 670 09/22/2019 SJ Lite Edition ;
-; Revision Name                      ; part2                                       ;
-; Top-level Entity Name              ; part2                                       ;
-; Family                             ; MAX 10                                      ;
-; Total logic elements               ; 8                                           ;
-;     Total combinational functions  ; 8                                           ;
-;     Dedicated logic registers      ; 0                                           ;
-; Total registers                    ; 0                                           ;
-; Total pins                         ; 70                                          ;
-; Total virtual pins                 ; 0                                           ;
-; Total memory bits                  ; 0                                           ;
-; Embedded Multiplier 9-bit elements ; 0                                           ;
-; Total PLLs                         ; 0                                           ;
-; UFM blocks                         ; 0                                           ;
-; ADC blocks                         ; 0                                           ;
-+------------------------------------+---------------------------------------------+
++--------------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                         ;
++------------------------------------+-------------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Thu Jan 16 16:28:28 2025           ;
+; Quartus Prime Version              ; 19.1.0 Build 670 09/22/2019 SJ Standard Edition ;
+; Revision Name                      ; part2                                           ;
+; Top-level Entity Name              ; part2                                           ;
+; Family                             ; MAX 10                                          ;
+; Total logic elements               ; 8                                               ;
+;     Total combinational functions  ; 8                                               ;
+;     Dedicated logic registers      ; 0                                               ;
+; Total registers                    ; 0                                               ;
+; Total pins                         ; 68                                              ;
+; Total virtual pins                 ; 0                                               ;
+; Total memory bits                  ; 0                                               ;
+; Embedded Multiplier 9-bit elements ; 0                                               ;
+; Total PLLs                         ; 0                                               ;
+; UFM blocks                         ; 0                                               ;
+; ADC blocks                         ; 0                                               ;
++------------------------------------+-------------------------------------------------+
 
 
 +------------------------------------------------------------------------------------------------------------+
@@ -153,8 +154,8 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+-------------+
 ; Processors                 ; Number      ;
 +----------------------------+-------------+
-; Number detected on machine ; 8           ;
-; Maximum allowed            ; 4           ;
+; Number detected on machine ; 12          ;
+; Maximum allowed            ; 12          ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
 ; Maximum used               ; 1           ;
@@ -164,13 +165,14 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+-------------+
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                                                      ;
-+----------------------------------+-----------------+------------------------------+---------------------------------------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                                                  ; Library ;
-+----------------------------------+-----------------+------------------------------+---------------------------------------------------------------------------------------------------------------+---------+
-; part2.v                          ; yes             ; Auto-Found Verilog HDL File  ; C:/Users/jhsu2/OneDrive/Documents/UC Davis/2024-2025/Winter Quarter/EEC 180/Labs/lab1/synthesis/part2/part2.v ;         ;
-+----------------------------------+-----------------+------------------------------+---------------------------------------------------------------------------------------------------------------+---------+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                              ;
++----------------------------------+-----------------+------------------------+-------------------------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type              ; File Name with Absolute Path                                                                                ; Library ;
++----------------------------------+-----------------+------------------------+-------------------------------------------------------------------------------------------------------------+---------+
+; ../../hdl/7 segment decoder.v    ; yes             ; User Verilog HDL File  ; C:/Users/Justin/Documents/School/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab1/hdl/7 segment decoder.v ;         ;
+; part2.v                          ; yes             ; User Verilog HDL File  ; C:/Users/Justin/Documents/School/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab1/synthesis/part2/part2.v ;         ;
++----------------------------------+-----------------+------------------------+-------------------------------------------------------------------------------------------------------------+---------+
 
 
 +-----------------------------------------------------------+
@@ -194,24 +196,25 @@ https://fpgasoftware.intel.com/eula.
 ;     -- Dedicated logic registers            ; 0           ;
 ;     -- I/O registers                        ; 0           ;
 ;                                             ;             ;
-; I/O pins                                    ; 70          ;
+; I/O pins                                    ; 68          ;
 ;                                             ;             ;
 ; Embedded Multiplier 9-bit elements          ; 0           ;
 ;                                             ;             ;
 ; Maximum fan-out node                        ; SW[1]~input ;
 ; Maximum fan-out                             ; 8           ;
-; Total fan-out                               ; 112         ;
+; Total fan-out                               ; 110         ;
 ; Average fan-out                             ; 0.76        ;
 +---------------------------------------------+-------------+
 
 
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                ;
-+----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+---------------------+-------------+--------------+
-; Compilation Hierarchy Node ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name ; Entity Name ; Library Name ;
-+----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+---------------------+-------------+--------------+
-; |part2                     ; 8 (8)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 70   ; 0            ; 0          ; |part2              ; part2       ; work         ;
-+----------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+---------------------+-------------+--------------+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                        ;
++---------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+-----------------------------------+------------------+--------------+
+; Compilation Hierarchy Node      ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; UFM Blocks ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; ADC blocks ; Full Hierarchy Name               ; Entity Name      ; Library Name ;
++---------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+-----------------------------------+------------------+--------------+
+; |part2                          ; 8 (0)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 68   ; 0            ; 0          ; |part2                            ; part2            ; work         ;
+;    |dec_7seg_decoder:u_decoder| ; 8 (8)               ; 0 (0)                     ; 0           ; 0          ; 0            ; 0       ; 0         ; 0    ; 0            ; 0          ; |part2|dec_7seg_decoder:u_decoder ; dec_7seg_decoder ; work         ;
++---------------------------------+---------------------+---------------------------+-------------+------------+--------------+---------+-----------+------+--------------+------------+-----------------------------------+------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
@@ -230,12 +233,22 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +----------------------------------------------+-------+
 
 
++----------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "dec_7seg_decoder:u_decoder"                                                                                             ;
++------+--------+----------+-------------------------------------------------------------------------------------------------------------------------+
+; Port ; Type   ; Severity ; Details                                                                                                                 ;
++------+--------+----------+-------------------------------------------------------------------------------------------------------------------------+
+; HEX0 ; Output ; Warning  ; Output or bidir port (8 bits) is wider than the port expression (7 bits) it drives; bit(s) "HEX0[7..7]" have no fanouts ;
+; HEX1 ; Output ; Warning  ; Output or bidir port (8 bits) is wider than the port expression (7 bits) it drives; bit(s) "HEX1[7..7]" have no fanouts ;
++------+--------+----------+-------------------------------------------------------------------------------------------------------------------------+
+
+
 +-----------------------------------------------------+
 ; Post-Synthesis Netlist Statistics for Top Partition ;
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; boundary_port         ; 70                          ;
+; boundary_port         ; 68                          ;
 ; cycloneiii_lcell_comb ; 11                          ;
 ;     normal            ; 11                          ;
 ;         0 data inputs ; 2                           ;
@@ -262,89 +275,87 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-------------------------------+
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
-    Info: Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
-    Info: Processing started: Thu Jan 09 16:18:22 2025
+    Info: Version 19.1.0 Build 670 09/22/2019 SJ Standard Edition
+    Info: Processing started: Thu Jan 16 16:28:22 2025
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off part2 -c part2
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
-Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
-Warning (12125): Using design file part2.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
-    Info (12023): Found entity 1: part2 File: C:/Users/jhsu2/OneDrive/Documents/UC Davis/2024-2025/Winter Quarter/EEC 180/Labs/lab1/synthesis/part2/part2.v Line: 6
+Info (20030): Parallel compilation is enabled and will use 12 of the 12 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file /users/justin/documents/school/2024-2025/winter quarter/eec 180/eec-180-labs/lab1/hdl/7 segment decoder.v
+    Info (12023): Found entity 1: dec_7seg_decoder File: C:/Users/Justin/Documents/School/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab1/hdl/7 segment decoder.v Line: 4
+Info (12021): Found 1 design units, including 1 entities, in source file part2.v
+    Info (12023): Found entity 1: part2 File: C:/Users/Justin/Documents/School/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab1/synthesis/part2/part2.v Line: 3
 Info (12127): Elaborating entity "part2" for the top level hierarchy
-Warning (10034): Output port "HEX0[7]" at part2.v(9) has no driver File: C:/Users/jhsu2/OneDrive/Documents/UC Davis/2024-2025/Winter Quarter/EEC 180/Labs/lab1/synthesis/part2/part2.v Line: 9
-Warning (10034): Output port "HEX1[7]" at part2.v(10) has no driver File: C:/Users/jhsu2/OneDrive/Documents/UC Davis/2024-2025/Winter Quarter/EEC 180/Labs/lab1/synthesis/part2/part2.v Line: 10
-Warning (10034): Output port "HEX2" at part2.v(11) has no driver File: C:/Users/jhsu2/OneDrive/Documents/UC Davis/2024-2025/Winter Quarter/EEC 180/Labs/lab1/synthesis/part2/part2.v Line: 11
-Warning (10034): Output port "HEX3" at part2.v(12) has no driver File: C:/Users/jhsu2/OneDrive/Documents/UC Davis/2024-2025/Winter Quarter/EEC 180/Labs/lab1/synthesis/part2/part2.v Line: 12
-Warning (10034): Output port "HEX4" at part2.v(13) has no driver File: C:/Users/jhsu2/OneDrive/Documents/UC Davis/2024-2025/Winter Quarter/EEC 180/Labs/lab1/synthesis/part2/part2.v Line: 13
-Warning (10034): Output port "HEX5" at part2.v(14) has no driver File: C:/Users/jhsu2/OneDrive/Documents/UC Davis/2024-2025/Winter Quarter/EEC 180/Labs/lab1/synthesis/part2/part2.v Line: 14
-Warning (10034): Output port "LEDR" at part2.v(20) has no driver File: C:/Users/jhsu2/OneDrive/Documents/UC Davis/2024-2025/Winter Quarter/EEC 180/Labs/lab1/synthesis/part2/part2.v Line: 20
+Warning (10034): Output port "LEDR" at part2.v(17) has no driver File: C:/Users/Justin/Documents/School/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab1/synthesis/part2/part2.v Line: 17
+Info (12128): Elaborating entity "dec_7seg_decoder" for hierarchy "dec_7seg_decoder:u_decoder" File: C:/Users/Justin/Documents/School/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab1/synthesis/part2/part2.v Line: 41
+Warning (10034): Output port "HEX0[7]" at 7 segment decoder.v(7) has no driver File: C:/Users/Justin/Documents/School/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab1/hdl/7 segment decoder.v Line: 7
+Warning (10034): Output port "HEX1[7]" at 7 segment decoder.v(9) has no driver File: C:/Users/Justin/Documents/School/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab1/hdl/7 segment decoder.v Line: 9
+Warning (12241): 1 hierarchies have connectivity warnings - see the Connectivity Checks report folder
 Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "HEX0[7]" is stuck at GND File: C:/Users/jhsu2/OneDrive/Documents/UC Davis/2024-2025/Winter Quarter/EEC 180/Labs/lab1/synthesis/part2/part2.v Line: 9
-    Warning (13410): Pin "HEX1[1]" is stuck at GND File: C:/Users/jhsu2/OneDrive/Documents/UC Davis/2024-2025/Winter Quarter/EEC 180/Labs/lab1/synthesis/part2/part2.v Line: 10
-    Warning (13410): Pin "HEX1[2]" is stuck at GND File: C:/Users/jhsu2/OneDrive/Documents/UC Davis/2024-2025/Winter Quarter/EEC 180/Labs/lab1/synthesis/part2/part2.v Line: 10
-    Warning (13410): Pin "HEX1[6]" is stuck at VCC File: C:/Users/jhsu2/OneDrive/Documents/UC Davis/2024-2025/Winter Quarter/EEC 180/Labs/lab1/synthesis/part2/part2.v Line: 10
-    Warning (13410): Pin "HEX1[7]" is stuck at GND File: C:/Users/jhsu2/OneDrive/Documents/UC Davis/2024-2025/Winter Quarter/EEC 180/Labs/lab1/synthesis/part2/part2.v Line: 10
-    Warning (13410): Pin "HEX2[0]" is stuck at GND File: C:/Users/jhsu2/OneDrive/Documents/UC Davis/2024-2025/Winter Quarter/EEC 180/Labs/lab1/synthesis/part2/part2.v Line: 11
-    Warning (13410): Pin "HEX2[1]" is stuck at GND File: C:/Users/jhsu2/OneDrive/Documents/UC Davis/2024-2025/Winter Quarter/EEC 180/Labs/lab1/synthesis/part2/part2.v Line: 11
-    Warning (13410): Pin "HEX2[2]" is stuck at GND File: C:/Users/jhsu2/OneDrive/Documents/UC Davis/2024-2025/Winter Quarter/EEC 180/Labs/lab1/synthesis/part2/part2.v Line: 11
-    Warning (13410): Pin "HEX2[3]" is stuck at GND File: C:/Users/jhsu2/OneDrive/Documents/UC Davis/2024-2025/Winter Quarter/EEC 180/Labs/lab1/synthesis/part2/part2.v Line: 11
-    Warning (13410): Pin "HEX2[4]" is stuck at GND File: C:/Users/jhsu2/OneDrive/Documents/UC Davis/2024-2025/Winter Quarter/EEC 180/Labs/lab1/synthesis/part2/part2.v Line: 11
-    Warning (13410): Pin "HEX2[5]" is stuck at GND File: C:/Users/jhsu2/OneDrive/Documents/UC Davis/2024-2025/Winter Quarter/EEC 180/Labs/lab1/synthesis/part2/part2.v Line: 11
-    Warning (13410): Pin "HEX2[6]" is stuck at GND File: C:/Users/jhsu2/OneDrive/Documents/UC Davis/2024-2025/Winter Quarter/EEC 180/Labs/lab1/synthesis/part2/part2.v Line: 11
-    Warning (13410): Pin "HEX2[7]" is stuck at GND File: C:/Users/jhsu2/OneDrive/Documents/UC Davis/2024-2025/Winter Quarter/EEC 180/Labs/lab1/synthesis/part2/part2.v Line: 11
-    Warning (13410): Pin "HEX3[0]" is stuck at GND File: C:/Users/jhsu2/OneDrive/Documents/UC Davis/2024-2025/Winter Quarter/EEC 180/Labs/lab1/synthesis/part2/part2.v Line: 12
-    Warning (13410): Pin "HEX3[1]" is stuck at GND File: C:/Users/jhsu2/OneDrive/Documents/UC Davis/2024-2025/Winter Quarter/EEC 180/Labs/lab1/synthesis/part2/part2.v Line: 12
-    Warning (13410): Pin "HEX3[2]" is stuck at GND File: C:/Users/jhsu2/OneDrive/Documents/UC Davis/2024-2025/Winter Quarter/EEC 180/Labs/lab1/synthesis/part2/part2.v Line: 12
-    Warning (13410): Pin "HEX3[3]" is stuck at GND File: C:/Users/jhsu2/OneDrive/Documents/UC Davis/2024-2025/Winter Quarter/EEC 180/Labs/lab1/synthesis/part2/part2.v Line: 12
-    Warning (13410): Pin "HEX3[4]" is stuck at GND File: C:/Users/jhsu2/OneDrive/Documents/UC Davis/2024-2025/Winter Quarter/EEC 180/Labs/lab1/synthesis/part2/part2.v Line: 12
-    Warning (13410): Pin "HEX3[5]" is stuck at GND File: C:/Users/jhsu2/OneDrive/Documents/UC Davis/2024-2025/Winter Quarter/EEC 180/Labs/lab1/synthesis/part2/part2.v Line: 12
-    Warning (13410): Pin "HEX3[6]" is stuck at GND File: C:/Users/jhsu2/OneDrive/Documents/UC Davis/2024-2025/Winter Quarter/EEC 180/Labs/lab1/synthesis/part2/part2.v Line: 12
-    Warning (13410): Pin "HEX3[7]" is stuck at GND File: C:/Users/jhsu2/OneDrive/Documents/UC Davis/2024-2025/Winter Quarter/EEC 180/Labs/lab1/synthesis/part2/part2.v Line: 12
-    Warning (13410): Pin "HEX4[0]" is stuck at GND File: C:/Users/jhsu2/OneDrive/Documents/UC Davis/2024-2025/Winter Quarter/EEC 180/Labs/lab1/synthesis/part2/part2.v Line: 13
-    Warning (13410): Pin "HEX4[1]" is stuck at GND File: C:/Users/jhsu2/OneDrive/Documents/UC Davis/2024-2025/Winter Quarter/EEC 180/Labs/lab1/synthesis/part2/part2.v Line: 13
-    Warning (13410): Pin "HEX4[2]" is stuck at GND File: C:/Users/jhsu2/OneDrive/Documents/UC Davis/2024-2025/Winter Quarter/EEC 180/Labs/lab1/synthesis/part2/part2.v Line: 13
-    Warning (13410): Pin "HEX4[3]" is stuck at GND File: C:/Users/jhsu2/OneDrive/Documents/UC Davis/2024-2025/Winter Quarter/EEC 180/Labs/lab1/synthesis/part2/part2.v Line: 13
-    Warning (13410): Pin "HEX4[4]" is stuck at GND File: C:/Users/jhsu2/OneDrive/Documents/UC Davis/2024-2025/Winter Quarter/EEC 180/Labs/lab1/synthesis/part2/part2.v Line: 13
-    Warning (13410): Pin "HEX4[5]" is stuck at GND File: C:/Users/jhsu2/OneDrive/Documents/UC Davis/2024-2025/Winter Quarter/EEC 180/Labs/lab1/synthesis/part2/part2.v Line: 13
-    Warning (13410): Pin "HEX4[6]" is stuck at GND File: C:/Users/jhsu2/OneDrive/Documents/UC Davis/2024-2025/Winter Quarter/EEC 180/Labs/lab1/synthesis/part2/part2.v Line: 13
-    Warning (13410): Pin "HEX4[7]" is stuck at GND File: C:/Users/jhsu2/OneDrive/Documents/UC Davis/2024-2025/Winter Quarter/EEC 180/Labs/lab1/synthesis/part2/part2.v Line: 13
-    Warning (13410): Pin "HEX5[0]" is stuck at GND File: C:/Users/jhsu2/OneDrive/Documents/UC Davis/2024-2025/Winter Quarter/EEC 180/Labs/lab1/synthesis/part2/part2.v Line: 14
-    Warning (13410): Pin "HEX5[1]" is stuck at GND File: C:/Users/jhsu2/OneDrive/Documents/UC Davis/2024-2025/Winter Quarter/EEC 180/Labs/lab1/synthesis/part2/part2.v Line: 14
-    Warning (13410): Pin "HEX5[2]" is stuck at GND File: C:/Users/jhsu2/OneDrive/Documents/UC Davis/2024-2025/Winter Quarter/EEC 180/Labs/lab1/synthesis/part2/part2.v Line: 14
-    Warning (13410): Pin "HEX5[3]" is stuck at GND File: C:/Users/jhsu2/OneDrive/Documents/UC Davis/2024-2025/Winter Quarter/EEC 180/Labs/lab1/synthesis/part2/part2.v Line: 14
-    Warning (13410): Pin "HEX5[4]" is stuck at GND File: C:/Users/jhsu2/OneDrive/Documents/UC Davis/2024-2025/Winter Quarter/EEC 180/Labs/lab1/synthesis/part2/part2.v Line: 14
-    Warning (13410): Pin "HEX5[5]" is stuck at GND File: C:/Users/jhsu2/OneDrive/Documents/UC Davis/2024-2025/Winter Quarter/EEC 180/Labs/lab1/synthesis/part2/part2.v Line: 14
-    Warning (13410): Pin "HEX5[6]" is stuck at GND File: C:/Users/jhsu2/OneDrive/Documents/UC Davis/2024-2025/Winter Quarter/EEC 180/Labs/lab1/synthesis/part2/part2.v Line: 14
-    Warning (13410): Pin "HEX5[7]" is stuck at GND File: C:/Users/jhsu2/OneDrive/Documents/UC Davis/2024-2025/Winter Quarter/EEC 180/Labs/lab1/synthesis/part2/part2.v Line: 14
-    Warning (13410): Pin "LEDR[0]" is stuck at GND File: C:/Users/jhsu2/OneDrive/Documents/UC Davis/2024-2025/Winter Quarter/EEC 180/Labs/lab1/synthesis/part2/part2.v Line: 20
-    Warning (13410): Pin "LEDR[1]" is stuck at GND File: C:/Users/jhsu2/OneDrive/Documents/UC Davis/2024-2025/Winter Quarter/EEC 180/Labs/lab1/synthesis/part2/part2.v Line: 20
-    Warning (13410): Pin "LEDR[2]" is stuck at GND File: C:/Users/jhsu2/OneDrive/Documents/UC Davis/2024-2025/Winter Quarter/EEC 180/Labs/lab1/synthesis/part2/part2.v Line: 20
-    Warning (13410): Pin "LEDR[3]" is stuck at GND File: C:/Users/jhsu2/OneDrive/Documents/UC Davis/2024-2025/Winter Quarter/EEC 180/Labs/lab1/synthesis/part2/part2.v Line: 20
-    Warning (13410): Pin "LEDR[4]" is stuck at GND File: C:/Users/jhsu2/OneDrive/Documents/UC Davis/2024-2025/Winter Quarter/EEC 180/Labs/lab1/synthesis/part2/part2.v Line: 20
-    Warning (13410): Pin "LEDR[5]" is stuck at GND File: C:/Users/jhsu2/OneDrive/Documents/UC Davis/2024-2025/Winter Quarter/EEC 180/Labs/lab1/synthesis/part2/part2.v Line: 20
-    Warning (13410): Pin "LEDR[6]" is stuck at GND File: C:/Users/jhsu2/OneDrive/Documents/UC Davis/2024-2025/Winter Quarter/EEC 180/Labs/lab1/synthesis/part2/part2.v Line: 20
-    Warning (13410): Pin "LEDR[7]" is stuck at GND File: C:/Users/jhsu2/OneDrive/Documents/UC Davis/2024-2025/Winter Quarter/EEC 180/Labs/lab1/synthesis/part2/part2.v Line: 20
-    Warning (13410): Pin "LEDR[8]" is stuck at GND File: C:/Users/jhsu2/OneDrive/Documents/UC Davis/2024-2025/Winter Quarter/EEC 180/Labs/lab1/synthesis/part2/part2.v Line: 20
-    Warning (13410): Pin "LEDR[9]" is stuck at GND File: C:/Users/jhsu2/OneDrive/Documents/UC Davis/2024-2025/Winter Quarter/EEC 180/Labs/lab1/synthesis/part2/part2.v Line: 20
+    Warning (13410): Pin "HEX1[1]" is stuck at GND File: C:/Users/Justin/Documents/School/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab1/synthesis/part2/part2.v Line: 7
+    Warning (13410): Pin "HEX1[2]" is stuck at GND File: C:/Users/Justin/Documents/School/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab1/synthesis/part2/part2.v Line: 7
+    Warning (13410): Pin "HEX1[6]" is stuck at VCC File: C:/Users/Justin/Documents/School/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab1/synthesis/part2/part2.v Line: 7
+    Warning (13410): Pin "HEX2[0]" is stuck at VCC File: C:/Users/Justin/Documents/School/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab1/synthesis/part2/part2.v Line: 8
+    Warning (13410): Pin "HEX2[1]" is stuck at VCC File: C:/Users/Justin/Documents/School/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab1/synthesis/part2/part2.v Line: 8
+    Warning (13410): Pin "HEX2[2]" is stuck at VCC File: C:/Users/Justin/Documents/School/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab1/synthesis/part2/part2.v Line: 8
+    Warning (13410): Pin "HEX2[3]" is stuck at VCC File: C:/Users/Justin/Documents/School/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab1/synthesis/part2/part2.v Line: 8
+    Warning (13410): Pin "HEX2[4]" is stuck at VCC File: C:/Users/Justin/Documents/School/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab1/synthesis/part2/part2.v Line: 8
+    Warning (13410): Pin "HEX2[5]" is stuck at VCC File: C:/Users/Justin/Documents/School/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab1/synthesis/part2/part2.v Line: 8
+    Warning (13410): Pin "HEX2[6]" is stuck at VCC File: C:/Users/Justin/Documents/School/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab1/synthesis/part2/part2.v Line: 8
+    Warning (13410): Pin "HEX2[7]" is stuck at VCC File: C:/Users/Justin/Documents/School/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab1/synthesis/part2/part2.v Line: 8
+    Warning (13410): Pin "HEX3[0]" is stuck at VCC File: C:/Users/Justin/Documents/School/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab1/synthesis/part2/part2.v Line: 9
+    Warning (13410): Pin "HEX3[1]" is stuck at VCC File: C:/Users/Justin/Documents/School/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab1/synthesis/part2/part2.v Line: 9
+    Warning (13410): Pin "HEX3[2]" is stuck at VCC File: C:/Users/Justin/Documents/School/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab1/synthesis/part2/part2.v Line: 9
+    Warning (13410): Pin "HEX3[3]" is stuck at VCC File: C:/Users/Justin/Documents/School/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab1/synthesis/part2/part2.v Line: 9
+    Warning (13410): Pin "HEX3[4]" is stuck at VCC File: C:/Users/Justin/Documents/School/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab1/synthesis/part2/part2.v Line: 9
+    Warning (13410): Pin "HEX3[5]" is stuck at VCC File: C:/Users/Justin/Documents/School/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab1/synthesis/part2/part2.v Line: 9
+    Warning (13410): Pin "HEX3[6]" is stuck at VCC File: C:/Users/Justin/Documents/School/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab1/synthesis/part2/part2.v Line: 9
+    Warning (13410): Pin "HEX3[7]" is stuck at VCC File: C:/Users/Justin/Documents/School/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab1/synthesis/part2/part2.v Line: 9
+    Warning (13410): Pin "HEX4[0]" is stuck at VCC File: C:/Users/Justin/Documents/School/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab1/synthesis/part2/part2.v Line: 10
+    Warning (13410): Pin "HEX4[1]" is stuck at VCC File: C:/Users/Justin/Documents/School/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab1/synthesis/part2/part2.v Line: 10
+    Warning (13410): Pin "HEX4[2]" is stuck at VCC File: C:/Users/Justin/Documents/School/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab1/synthesis/part2/part2.v Line: 10
+    Warning (13410): Pin "HEX4[3]" is stuck at VCC File: C:/Users/Justin/Documents/School/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab1/synthesis/part2/part2.v Line: 10
+    Warning (13410): Pin "HEX4[4]" is stuck at VCC File: C:/Users/Justin/Documents/School/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab1/synthesis/part2/part2.v Line: 10
+    Warning (13410): Pin "HEX4[5]" is stuck at VCC File: C:/Users/Justin/Documents/School/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab1/synthesis/part2/part2.v Line: 10
+    Warning (13410): Pin "HEX4[6]" is stuck at VCC File: C:/Users/Justin/Documents/School/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab1/synthesis/part2/part2.v Line: 10
+    Warning (13410): Pin "HEX4[7]" is stuck at VCC File: C:/Users/Justin/Documents/School/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab1/synthesis/part2/part2.v Line: 10
+    Warning (13410): Pin "HEX5[0]" is stuck at VCC File: C:/Users/Justin/Documents/School/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab1/synthesis/part2/part2.v Line: 11
+    Warning (13410): Pin "HEX5[1]" is stuck at VCC File: C:/Users/Justin/Documents/School/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab1/synthesis/part2/part2.v Line: 11
+    Warning (13410): Pin "HEX5[2]" is stuck at VCC File: C:/Users/Justin/Documents/School/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab1/synthesis/part2/part2.v Line: 11
+    Warning (13410): Pin "HEX5[3]" is stuck at VCC File: C:/Users/Justin/Documents/School/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab1/synthesis/part2/part2.v Line: 11
+    Warning (13410): Pin "HEX5[4]" is stuck at VCC File: C:/Users/Justin/Documents/School/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab1/synthesis/part2/part2.v Line: 11
+    Warning (13410): Pin "HEX5[5]" is stuck at VCC File: C:/Users/Justin/Documents/School/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab1/synthesis/part2/part2.v Line: 11
+    Warning (13410): Pin "HEX5[6]" is stuck at VCC File: C:/Users/Justin/Documents/School/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab1/synthesis/part2/part2.v Line: 11
+    Warning (13410): Pin "HEX5[7]" is stuck at VCC File: C:/Users/Justin/Documents/School/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab1/synthesis/part2/part2.v Line: 11
+    Warning (13410): Pin "LEDR[0]" is stuck at GND File: C:/Users/Justin/Documents/School/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab1/synthesis/part2/part2.v Line: 17
+    Warning (13410): Pin "LEDR[1]" is stuck at GND File: C:/Users/Justin/Documents/School/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab1/synthesis/part2/part2.v Line: 17
+    Warning (13410): Pin "LEDR[2]" is stuck at GND File: C:/Users/Justin/Documents/School/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab1/synthesis/part2/part2.v Line: 17
+    Warning (13410): Pin "LEDR[3]" is stuck at GND File: C:/Users/Justin/Documents/School/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab1/synthesis/part2/part2.v Line: 17
+    Warning (13410): Pin "LEDR[4]" is stuck at GND File: C:/Users/Justin/Documents/School/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab1/synthesis/part2/part2.v Line: 17
+    Warning (13410): Pin "LEDR[5]" is stuck at GND File: C:/Users/Justin/Documents/School/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab1/synthesis/part2/part2.v Line: 17
+    Warning (13410): Pin "LEDR[6]" is stuck at GND File: C:/Users/Justin/Documents/School/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab1/synthesis/part2/part2.v Line: 17
+    Warning (13410): Pin "LEDR[7]" is stuck at GND File: C:/Users/Justin/Documents/School/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab1/synthesis/part2/part2.v Line: 17
+    Warning (13410): Pin "LEDR[8]" is stuck at GND File: C:/Users/Justin/Documents/School/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab1/synthesis/part2/part2.v Line: 17
+    Warning (13410): Pin "LEDR[9]" is stuck at GND File: C:/Users/Justin/Documents/School/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab1/synthesis/part2/part2.v Line: 17
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
 Warning (21074): Design contains 8 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "KEY[0]" File: C:/Users/jhsu2/OneDrive/Documents/UC Davis/2024-2025/Winter Quarter/EEC 180/Labs/lab1/synthesis/part2/part2.v Line: 17
-    Warning (15610): No output dependent on input pin "KEY[1]" File: C:/Users/jhsu2/OneDrive/Documents/UC Davis/2024-2025/Winter Quarter/EEC 180/Labs/lab1/synthesis/part2/part2.v Line: 17
-    Warning (15610): No output dependent on input pin "SW[4]" File: C:/Users/jhsu2/OneDrive/Documents/UC Davis/2024-2025/Winter Quarter/EEC 180/Labs/lab1/synthesis/part2/part2.v Line: 25
-    Warning (15610): No output dependent on input pin "SW[5]" File: C:/Users/jhsu2/OneDrive/Documents/UC Davis/2024-2025/Winter Quarter/EEC 180/Labs/lab1/synthesis/part2/part2.v Line: 25
-    Warning (15610): No output dependent on input pin "SW[6]" File: C:/Users/jhsu2/OneDrive/Documents/UC Davis/2024-2025/Winter Quarter/EEC 180/Labs/lab1/synthesis/part2/part2.v Line: 25
-    Warning (15610): No output dependent on input pin "SW[7]" File: C:/Users/jhsu2/OneDrive/Documents/UC Davis/2024-2025/Winter Quarter/EEC 180/Labs/lab1/synthesis/part2/part2.v Line: 25
-    Warning (15610): No output dependent on input pin "SW[8]" File: C:/Users/jhsu2/OneDrive/Documents/UC Davis/2024-2025/Winter Quarter/EEC 180/Labs/lab1/synthesis/part2/part2.v Line: 25
-    Warning (15610): No output dependent on input pin "SW[9]" File: C:/Users/jhsu2/OneDrive/Documents/UC Davis/2024-2025/Winter Quarter/EEC 180/Labs/lab1/synthesis/part2/part2.v Line: 25
-Info (21057): Implemented 78 device resources after synthesis - the final resource count might be different
+    Warning (15610): No output dependent on input pin "KEY[0]" File: C:/Users/Justin/Documents/School/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab1/synthesis/part2/part2.v Line: 14
+    Warning (15610): No output dependent on input pin "KEY[1]" File: C:/Users/Justin/Documents/School/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab1/synthesis/part2/part2.v Line: 14
+    Warning (15610): No output dependent on input pin "SW[4]" File: C:/Users/Justin/Documents/School/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab1/synthesis/part2/part2.v Line: 22
+    Warning (15610): No output dependent on input pin "SW[5]" File: C:/Users/Justin/Documents/School/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab1/synthesis/part2/part2.v Line: 22
+    Warning (15610): No output dependent on input pin "SW[6]" File: C:/Users/Justin/Documents/School/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab1/synthesis/part2/part2.v Line: 22
+    Warning (15610): No output dependent on input pin "SW[7]" File: C:/Users/Justin/Documents/School/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab1/synthesis/part2/part2.v Line: 22
+    Warning (15610): No output dependent on input pin "SW[8]" File: C:/Users/Justin/Documents/School/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab1/synthesis/part2/part2.v Line: 22
+    Warning (15610): No output dependent on input pin "SW[9]" File: C:/Users/Justin/Documents/School/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab1/synthesis/part2/part2.v Line: 22
+Info (21057): Implemented 76 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 12 input pins
-    Info (21059): Implemented 58 output pins
+    Info (21059): Implemented 56 output pins
     Info (21061): Implemented 8 logic cells
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 66 warnings
-    Info: Peak virtual memory: 4752 megabytes
-    Info: Processing ended: Thu Jan 09 16:18:29 2025
-    Info: Elapsed time: 00:00:07
-    Info: Total CPU time (on all processors): 00:00:05
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 60 warnings
+    Info: Peak virtual memory: 4777 megabytes
+    Info: Processing ended: Thu Jan 16 16:28:28 2025
+    Info: Elapsed time: 00:00:06
+    Info: Total CPU time (on all processors): 00:00:06
 
 
