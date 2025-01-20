@@ -1,6 +1,6 @@
 Analysis & Synthesis report for lab2_part1
-Thu Jan 16 13:52:03 2025
-Quartus Prime Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
+Sun Jan 19 14:56:40 2025
+Quartus Prime Version 19.1.0 Build 670 09/22/2019 SJ Standard Edition
 
 
 ---------------------
@@ -40,26 +40,26 @@ https://fpgasoftware.intel.com/eula.
 
 
 
-+----------------------------------------------------------------------------------+
-; Analysis & Synthesis Summary                                                     ;
-+------------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status        ; Successful - Thu Jan 16 13:52:03 2025       ;
-; Quartus Prime Version              ; 19.1.0 Build 670 09/22/2019 SJ Lite Edition ;
-; Revision Name                      ; lab2_part1                                  ;
-; Top-level Entity Name              ; lab2_part1                                  ;
-; Family                             ; MAX 10                                      ;
-; Total logic elements               ; 0                                           ;
-;     Total combinational functions  ; 0                                           ;
-;     Dedicated logic registers      ; 0                                           ;
-; Total registers                    ; 0                                           ;
-; Total pins                         ; 70                                          ;
-; Total virtual pins                 ; 0                                           ;
-; Total memory bits                  ; 0                                           ;
-; Embedded Multiplier 9-bit elements ; 0                                           ;
-; Total PLLs                         ; 0                                           ;
-; UFM blocks                         ; 0                                           ;
-; ADC blocks                         ; 0                                           ;
-+------------------------------------+---------------------------------------------+
++--------------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                         ;
++------------------------------------+-------------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Sun Jan 19 14:56:40 2025           ;
+; Quartus Prime Version              ; 19.1.0 Build 670 09/22/2019 SJ Standard Edition ;
+; Revision Name                      ; lab2_part1                                      ;
+; Top-level Entity Name              ; lab2_part1                                      ;
+; Family                             ; MAX 10                                          ;
+; Total logic elements               ; 0                                               ;
+;     Total combinational functions  ; 0                                               ;
+;     Dedicated logic registers      ; 0                                               ;
+; Total registers                    ; 0                                               ;
+; Total pins                         ; 70                                              ;
+; Total virtual pins                 ; 0                                               ;
+; Total memory bits                  ; 0                                               ;
+; Embedded Multiplier 9-bit elements ; 0                                               ;
+; Total PLLs                         ; 0                                               ;
+; UFM blocks                         ; 0                                               ;
+; ADC blocks                         ; 0                                               ;
++------------------------------------+-------------------------------------------------+
 
 
 +------------------------------------------------------------------------------------------------------------+
@@ -153,8 +153,8 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+-------------+
 ; Processors                 ; Number      ;
 +----------------------------+-------------+
-; Number detected on machine ; 8           ;
-; Maximum allowed            ; 4           ;
+; Number detected on machine ; 12          ;
+; Maximum allowed            ; 12          ;
 ;                            ;             ;
 ; Average used               ; 1.00        ;
 ; Maximum used               ; 1           ;
@@ -164,13 +164,13 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+-------------+
 
 
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                                                                   ;
-+----------------------------------+-----------------+------------------------------+----------------------------------------------------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                                                               ; Library ;
-+----------------------------------+-----------------+------------------------------+----------------------------------------------------------------------------------------------------------------------------+---------+
-; lab2_part1.v                     ; yes             ; Auto-Found Verilog HDL File  ; C:/Users/jhsu2/OneDrive/Documents/UC Davis/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/synthesis/part1/lab2_part1.v ;         ;
-+----------------------------------+-----------------+------------------------------+----------------------------------------------------------------------------------------------------------------------------+---------+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                                         ;
++----------------------------------+-----------------+------------------------------+------------------------------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                                                     ; Library ;
++----------------------------------+-----------------+------------------------------+------------------------------------------------------------------------------------------------------------------+---------+
+; lab2_part1.v                     ; yes             ; Auto-Found Verilog HDL File  ; C:/Users/Justin/Documents/School/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/synthesis/part1/lab2_part1.v ;         ;
++----------------------------------+-----------------+------------------------------+------------------------------------------------------------------------------------------------------------------+---------+
 
 
 +--------------------------------------------------------------+
@@ -258,104 +258,104 @@ Note: For table entries with two numbers listed, the numbers in parentheses indi
 +-------------------------------+
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
-    Info: Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
-    Info: Processing started: Thu Jan 16 13:51:56 2025
+    Info: Version 19.1.0 Build 670 09/22/2019 SJ Standard Edition
+    Info: Processing started: Sun Jan 19 14:56:33 2025
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off lab2_part1 -c lab2_part1
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
-Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (20030): Parallel compilation is enabled and will use 12 of the 12 processors detected
 Warning (12125): Using design file lab2_part1.v, which is not specified as a design file for the current project, but contains definitions for 3 design units and 3 entities in project
-    Info (12023): Found entity 1: lab2_part1 File: C:/Users/jhsu2/OneDrive/Documents/UC Davis/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/synthesis/part1/lab2_part1.v Line: 6
-    Info (12023): Found entity 2: fullAdder File: C:/Users/jhsu2/OneDrive/Documents/UC Davis/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/synthesis/part1/lab2_part1.v Line: 44
-    Info (12023): Found entity 3: rippleAdder File: C:/Users/jhsu2/OneDrive/Documents/UC Davis/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/synthesis/part1/lab2_part1.v Line: 59
+    Info (12023): Found entity 1: lab2_part1 File: C:/Users/Justin/Documents/School/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/synthesis/part1/lab2_part1.v Line: 6
+    Info (12023): Found entity 2: fullAdder File: C:/Users/Justin/Documents/School/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/synthesis/part1/lab2_part1.v Line: 44
+    Info (12023): Found entity 3: rippleAdder File: C:/Users/Justin/Documents/School/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/synthesis/part1/lab2_part1.v Line: 59
 Info (12127): Elaborating entity "lab2_part1" for the top level hierarchy
-Warning (10034): Output port "HEX0" at lab2_part1.v(9) has no driver File: C:/Users/jhsu2/OneDrive/Documents/UC Davis/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/synthesis/part1/lab2_part1.v Line: 9
-Warning (10034): Output port "HEX1" at lab2_part1.v(10) has no driver File: C:/Users/jhsu2/OneDrive/Documents/UC Davis/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/synthesis/part1/lab2_part1.v Line: 10
-Warning (10034): Output port "HEX2" at lab2_part1.v(11) has no driver File: C:/Users/jhsu2/OneDrive/Documents/UC Davis/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/synthesis/part1/lab2_part1.v Line: 11
-Warning (10034): Output port "HEX3" at lab2_part1.v(12) has no driver File: C:/Users/jhsu2/OneDrive/Documents/UC Davis/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/synthesis/part1/lab2_part1.v Line: 12
-Warning (10034): Output port "HEX4" at lab2_part1.v(13) has no driver File: C:/Users/jhsu2/OneDrive/Documents/UC Davis/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/synthesis/part1/lab2_part1.v Line: 13
-Warning (10034): Output port "HEX5" at lab2_part1.v(14) has no driver File: C:/Users/jhsu2/OneDrive/Documents/UC Davis/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/synthesis/part1/lab2_part1.v Line: 14
-Warning (10034): Output port "LEDR" at lab2_part1.v(20) has no driver File: C:/Users/jhsu2/OneDrive/Documents/UC Davis/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/synthesis/part1/lab2_part1.v Line: 20
+Warning (10034): Output port "HEX0" at lab2_part1.v(9) has no driver File: C:/Users/Justin/Documents/School/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/synthesis/part1/lab2_part1.v Line: 9
+Warning (10034): Output port "HEX1" at lab2_part1.v(10) has no driver File: C:/Users/Justin/Documents/School/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/synthesis/part1/lab2_part1.v Line: 10
+Warning (10034): Output port "HEX2" at lab2_part1.v(11) has no driver File: C:/Users/Justin/Documents/School/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/synthesis/part1/lab2_part1.v Line: 11
+Warning (10034): Output port "HEX3" at lab2_part1.v(12) has no driver File: C:/Users/Justin/Documents/School/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/synthesis/part1/lab2_part1.v Line: 12
+Warning (10034): Output port "HEX4" at lab2_part1.v(13) has no driver File: C:/Users/Justin/Documents/School/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/synthesis/part1/lab2_part1.v Line: 13
+Warning (10034): Output port "HEX5" at lab2_part1.v(14) has no driver File: C:/Users/Justin/Documents/School/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/synthesis/part1/lab2_part1.v Line: 14
+Warning (10034): Output port "LEDR" at lab2_part1.v(20) has no driver File: C:/Users/Justin/Documents/School/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/synthesis/part1/lab2_part1.v Line: 20
 Warning (12158): Entity "lab2_part1" contains only dangling pins
 Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "HEX0[0]" is stuck at GND File: C:/Users/jhsu2/OneDrive/Documents/UC Davis/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/synthesis/part1/lab2_part1.v Line: 9
-    Warning (13410): Pin "HEX0[1]" is stuck at GND File: C:/Users/jhsu2/OneDrive/Documents/UC Davis/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/synthesis/part1/lab2_part1.v Line: 9
-    Warning (13410): Pin "HEX0[2]" is stuck at GND File: C:/Users/jhsu2/OneDrive/Documents/UC Davis/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/synthesis/part1/lab2_part1.v Line: 9
-    Warning (13410): Pin "HEX0[3]" is stuck at GND File: C:/Users/jhsu2/OneDrive/Documents/UC Davis/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/synthesis/part1/lab2_part1.v Line: 9
-    Warning (13410): Pin "HEX0[4]" is stuck at GND File: C:/Users/jhsu2/OneDrive/Documents/UC Davis/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/synthesis/part1/lab2_part1.v Line: 9
-    Warning (13410): Pin "HEX0[5]" is stuck at GND File: C:/Users/jhsu2/OneDrive/Documents/UC Davis/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/synthesis/part1/lab2_part1.v Line: 9
-    Warning (13410): Pin "HEX0[6]" is stuck at GND File: C:/Users/jhsu2/OneDrive/Documents/UC Davis/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/synthesis/part1/lab2_part1.v Line: 9
-    Warning (13410): Pin "HEX0[7]" is stuck at GND File: C:/Users/jhsu2/OneDrive/Documents/UC Davis/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/synthesis/part1/lab2_part1.v Line: 9
-    Warning (13410): Pin "HEX1[0]" is stuck at GND File: C:/Users/jhsu2/OneDrive/Documents/UC Davis/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/synthesis/part1/lab2_part1.v Line: 10
-    Warning (13410): Pin "HEX1[1]" is stuck at GND File: C:/Users/jhsu2/OneDrive/Documents/UC Davis/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/synthesis/part1/lab2_part1.v Line: 10
-    Warning (13410): Pin "HEX1[2]" is stuck at GND File: C:/Users/jhsu2/OneDrive/Documents/UC Davis/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/synthesis/part1/lab2_part1.v Line: 10
-    Warning (13410): Pin "HEX1[3]" is stuck at GND File: C:/Users/jhsu2/OneDrive/Documents/UC Davis/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/synthesis/part1/lab2_part1.v Line: 10
-    Warning (13410): Pin "HEX1[4]" is stuck at GND File: C:/Users/jhsu2/OneDrive/Documents/UC Davis/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/synthesis/part1/lab2_part1.v Line: 10
-    Warning (13410): Pin "HEX1[5]" is stuck at GND File: C:/Users/jhsu2/OneDrive/Documents/UC Davis/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/synthesis/part1/lab2_part1.v Line: 10
-    Warning (13410): Pin "HEX1[6]" is stuck at GND File: C:/Users/jhsu2/OneDrive/Documents/UC Davis/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/synthesis/part1/lab2_part1.v Line: 10
-    Warning (13410): Pin "HEX1[7]" is stuck at GND File: C:/Users/jhsu2/OneDrive/Documents/UC Davis/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/synthesis/part1/lab2_part1.v Line: 10
-    Warning (13410): Pin "HEX2[0]" is stuck at GND File: C:/Users/jhsu2/OneDrive/Documents/UC Davis/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/synthesis/part1/lab2_part1.v Line: 11
-    Warning (13410): Pin "HEX2[1]" is stuck at GND File: C:/Users/jhsu2/OneDrive/Documents/UC Davis/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/synthesis/part1/lab2_part1.v Line: 11
-    Warning (13410): Pin "HEX2[2]" is stuck at GND File: C:/Users/jhsu2/OneDrive/Documents/UC Davis/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/synthesis/part1/lab2_part1.v Line: 11
-    Warning (13410): Pin "HEX2[3]" is stuck at GND File: C:/Users/jhsu2/OneDrive/Documents/UC Davis/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/synthesis/part1/lab2_part1.v Line: 11
-    Warning (13410): Pin "HEX2[4]" is stuck at GND File: C:/Users/jhsu2/OneDrive/Documents/UC Davis/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/synthesis/part1/lab2_part1.v Line: 11
-    Warning (13410): Pin "HEX2[5]" is stuck at GND File: C:/Users/jhsu2/OneDrive/Documents/UC Davis/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/synthesis/part1/lab2_part1.v Line: 11
-    Warning (13410): Pin "HEX2[6]" is stuck at GND File: C:/Users/jhsu2/OneDrive/Documents/UC Davis/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/synthesis/part1/lab2_part1.v Line: 11
-    Warning (13410): Pin "HEX2[7]" is stuck at GND File: C:/Users/jhsu2/OneDrive/Documents/UC Davis/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/synthesis/part1/lab2_part1.v Line: 11
-    Warning (13410): Pin "HEX3[0]" is stuck at GND File: C:/Users/jhsu2/OneDrive/Documents/UC Davis/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/synthesis/part1/lab2_part1.v Line: 12
-    Warning (13410): Pin "HEX3[1]" is stuck at GND File: C:/Users/jhsu2/OneDrive/Documents/UC Davis/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/synthesis/part1/lab2_part1.v Line: 12
-    Warning (13410): Pin "HEX3[2]" is stuck at GND File: C:/Users/jhsu2/OneDrive/Documents/UC Davis/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/synthesis/part1/lab2_part1.v Line: 12
-    Warning (13410): Pin "HEX3[3]" is stuck at GND File: C:/Users/jhsu2/OneDrive/Documents/UC Davis/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/synthesis/part1/lab2_part1.v Line: 12
-    Warning (13410): Pin "HEX3[4]" is stuck at GND File: C:/Users/jhsu2/OneDrive/Documents/UC Davis/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/synthesis/part1/lab2_part1.v Line: 12
-    Warning (13410): Pin "HEX3[5]" is stuck at GND File: C:/Users/jhsu2/OneDrive/Documents/UC Davis/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/synthesis/part1/lab2_part1.v Line: 12
-    Warning (13410): Pin "HEX3[6]" is stuck at GND File: C:/Users/jhsu2/OneDrive/Documents/UC Davis/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/synthesis/part1/lab2_part1.v Line: 12
-    Warning (13410): Pin "HEX3[7]" is stuck at GND File: C:/Users/jhsu2/OneDrive/Documents/UC Davis/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/synthesis/part1/lab2_part1.v Line: 12
-    Warning (13410): Pin "HEX4[0]" is stuck at GND File: C:/Users/jhsu2/OneDrive/Documents/UC Davis/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/synthesis/part1/lab2_part1.v Line: 13
-    Warning (13410): Pin "HEX4[1]" is stuck at GND File: C:/Users/jhsu2/OneDrive/Documents/UC Davis/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/synthesis/part1/lab2_part1.v Line: 13
-    Warning (13410): Pin "HEX4[2]" is stuck at GND File: C:/Users/jhsu2/OneDrive/Documents/UC Davis/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/synthesis/part1/lab2_part1.v Line: 13
-    Warning (13410): Pin "HEX4[3]" is stuck at GND File: C:/Users/jhsu2/OneDrive/Documents/UC Davis/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/synthesis/part1/lab2_part1.v Line: 13
-    Warning (13410): Pin "HEX4[4]" is stuck at GND File: C:/Users/jhsu2/OneDrive/Documents/UC Davis/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/synthesis/part1/lab2_part1.v Line: 13
-    Warning (13410): Pin "HEX4[5]" is stuck at GND File: C:/Users/jhsu2/OneDrive/Documents/UC Davis/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/synthesis/part1/lab2_part1.v Line: 13
-    Warning (13410): Pin "HEX4[6]" is stuck at GND File: C:/Users/jhsu2/OneDrive/Documents/UC Davis/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/synthesis/part1/lab2_part1.v Line: 13
-    Warning (13410): Pin "HEX4[7]" is stuck at GND File: C:/Users/jhsu2/OneDrive/Documents/UC Davis/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/synthesis/part1/lab2_part1.v Line: 13
-    Warning (13410): Pin "HEX5[0]" is stuck at GND File: C:/Users/jhsu2/OneDrive/Documents/UC Davis/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/synthesis/part1/lab2_part1.v Line: 14
-    Warning (13410): Pin "HEX5[1]" is stuck at GND File: C:/Users/jhsu2/OneDrive/Documents/UC Davis/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/synthesis/part1/lab2_part1.v Line: 14
-    Warning (13410): Pin "HEX5[2]" is stuck at GND File: C:/Users/jhsu2/OneDrive/Documents/UC Davis/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/synthesis/part1/lab2_part1.v Line: 14
-    Warning (13410): Pin "HEX5[3]" is stuck at GND File: C:/Users/jhsu2/OneDrive/Documents/UC Davis/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/synthesis/part1/lab2_part1.v Line: 14
-    Warning (13410): Pin "HEX5[4]" is stuck at GND File: C:/Users/jhsu2/OneDrive/Documents/UC Davis/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/synthesis/part1/lab2_part1.v Line: 14
-    Warning (13410): Pin "HEX5[5]" is stuck at GND File: C:/Users/jhsu2/OneDrive/Documents/UC Davis/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/synthesis/part1/lab2_part1.v Line: 14
-    Warning (13410): Pin "HEX5[6]" is stuck at GND File: C:/Users/jhsu2/OneDrive/Documents/UC Davis/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/synthesis/part1/lab2_part1.v Line: 14
-    Warning (13410): Pin "HEX5[7]" is stuck at GND File: C:/Users/jhsu2/OneDrive/Documents/UC Davis/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/synthesis/part1/lab2_part1.v Line: 14
-    Warning (13410): Pin "LEDR[0]" is stuck at GND File: C:/Users/jhsu2/OneDrive/Documents/UC Davis/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/synthesis/part1/lab2_part1.v Line: 20
-    Warning (13410): Pin "LEDR[1]" is stuck at GND File: C:/Users/jhsu2/OneDrive/Documents/UC Davis/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/synthesis/part1/lab2_part1.v Line: 20
-    Warning (13410): Pin "LEDR[2]" is stuck at GND File: C:/Users/jhsu2/OneDrive/Documents/UC Davis/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/synthesis/part1/lab2_part1.v Line: 20
-    Warning (13410): Pin "LEDR[3]" is stuck at GND File: C:/Users/jhsu2/OneDrive/Documents/UC Davis/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/synthesis/part1/lab2_part1.v Line: 20
-    Warning (13410): Pin "LEDR[4]" is stuck at GND File: C:/Users/jhsu2/OneDrive/Documents/UC Davis/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/synthesis/part1/lab2_part1.v Line: 20
-    Warning (13410): Pin "LEDR[5]" is stuck at GND File: C:/Users/jhsu2/OneDrive/Documents/UC Davis/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/synthesis/part1/lab2_part1.v Line: 20
-    Warning (13410): Pin "LEDR[6]" is stuck at GND File: C:/Users/jhsu2/OneDrive/Documents/UC Davis/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/synthesis/part1/lab2_part1.v Line: 20
-    Warning (13410): Pin "LEDR[7]" is stuck at GND File: C:/Users/jhsu2/OneDrive/Documents/UC Davis/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/synthesis/part1/lab2_part1.v Line: 20
-    Warning (13410): Pin "LEDR[8]" is stuck at GND File: C:/Users/jhsu2/OneDrive/Documents/UC Davis/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/synthesis/part1/lab2_part1.v Line: 20
-    Warning (13410): Pin "LEDR[9]" is stuck at GND File: C:/Users/jhsu2/OneDrive/Documents/UC Davis/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/synthesis/part1/lab2_part1.v Line: 20
+    Warning (13410): Pin "HEX0[0]" is stuck at GND File: C:/Users/Justin/Documents/School/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/synthesis/part1/lab2_part1.v Line: 9
+    Warning (13410): Pin "HEX0[1]" is stuck at GND File: C:/Users/Justin/Documents/School/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/synthesis/part1/lab2_part1.v Line: 9
+    Warning (13410): Pin "HEX0[2]" is stuck at GND File: C:/Users/Justin/Documents/School/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/synthesis/part1/lab2_part1.v Line: 9
+    Warning (13410): Pin "HEX0[3]" is stuck at GND File: C:/Users/Justin/Documents/School/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/synthesis/part1/lab2_part1.v Line: 9
+    Warning (13410): Pin "HEX0[4]" is stuck at GND File: C:/Users/Justin/Documents/School/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/synthesis/part1/lab2_part1.v Line: 9
+    Warning (13410): Pin "HEX0[5]" is stuck at GND File: C:/Users/Justin/Documents/School/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/synthesis/part1/lab2_part1.v Line: 9
+    Warning (13410): Pin "HEX0[6]" is stuck at GND File: C:/Users/Justin/Documents/School/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/synthesis/part1/lab2_part1.v Line: 9
+    Warning (13410): Pin "HEX0[7]" is stuck at GND File: C:/Users/Justin/Documents/School/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/synthesis/part1/lab2_part1.v Line: 9
+    Warning (13410): Pin "HEX1[0]" is stuck at GND File: C:/Users/Justin/Documents/School/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/synthesis/part1/lab2_part1.v Line: 10
+    Warning (13410): Pin "HEX1[1]" is stuck at GND File: C:/Users/Justin/Documents/School/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/synthesis/part1/lab2_part1.v Line: 10
+    Warning (13410): Pin "HEX1[2]" is stuck at GND File: C:/Users/Justin/Documents/School/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/synthesis/part1/lab2_part1.v Line: 10
+    Warning (13410): Pin "HEX1[3]" is stuck at GND File: C:/Users/Justin/Documents/School/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/synthesis/part1/lab2_part1.v Line: 10
+    Warning (13410): Pin "HEX1[4]" is stuck at GND File: C:/Users/Justin/Documents/School/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/synthesis/part1/lab2_part1.v Line: 10
+    Warning (13410): Pin "HEX1[5]" is stuck at GND File: C:/Users/Justin/Documents/School/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/synthesis/part1/lab2_part1.v Line: 10
+    Warning (13410): Pin "HEX1[6]" is stuck at GND File: C:/Users/Justin/Documents/School/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/synthesis/part1/lab2_part1.v Line: 10
+    Warning (13410): Pin "HEX1[7]" is stuck at GND File: C:/Users/Justin/Documents/School/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/synthesis/part1/lab2_part1.v Line: 10
+    Warning (13410): Pin "HEX2[0]" is stuck at GND File: C:/Users/Justin/Documents/School/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/synthesis/part1/lab2_part1.v Line: 11
+    Warning (13410): Pin "HEX2[1]" is stuck at GND File: C:/Users/Justin/Documents/School/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/synthesis/part1/lab2_part1.v Line: 11
+    Warning (13410): Pin "HEX2[2]" is stuck at GND File: C:/Users/Justin/Documents/School/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/synthesis/part1/lab2_part1.v Line: 11
+    Warning (13410): Pin "HEX2[3]" is stuck at GND File: C:/Users/Justin/Documents/School/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/synthesis/part1/lab2_part1.v Line: 11
+    Warning (13410): Pin "HEX2[4]" is stuck at GND File: C:/Users/Justin/Documents/School/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/synthesis/part1/lab2_part1.v Line: 11
+    Warning (13410): Pin "HEX2[5]" is stuck at GND File: C:/Users/Justin/Documents/School/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/synthesis/part1/lab2_part1.v Line: 11
+    Warning (13410): Pin "HEX2[6]" is stuck at GND File: C:/Users/Justin/Documents/School/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/synthesis/part1/lab2_part1.v Line: 11
+    Warning (13410): Pin "HEX2[7]" is stuck at GND File: C:/Users/Justin/Documents/School/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/synthesis/part1/lab2_part1.v Line: 11
+    Warning (13410): Pin "HEX3[0]" is stuck at GND File: C:/Users/Justin/Documents/School/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/synthesis/part1/lab2_part1.v Line: 12
+    Warning (13410): Pin "HEX3[1]" is stuck at GND File: C:/Users/Justin/Documents/School/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/synthesis/part1/lab2_part1.v Line: 12
+    Warning (13410): Pin "HEX3[2]" is stuck at GND File: C:/Users/Justin/Documents/School/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/synthesis/part1/lab2_part1.v Line: 12
+    Warning (13410): Pin "HEX3[3]" is stuck at GND File: C:/Users/Justin/Documents/School/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/synthesis/part1/lab2_part1.v Line: 12
+    Warning (13410): Pin "HEX3[4]" is stuck at GND File: C:/Users/Justin/Documents/School/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/synthesis/part1/lab2_part1.v Line: 12
+    Warning (13410): Pin "HEX3[5]" is stuck at GND File: C:/Users/Justin/Documents/School/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/synthesis/part1/lab2_part1.v Line: 12
+    Warning (13410): Pin "HEX3[6]" is stuck at GND File: C:/Users/Justin/Documents/School/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/synthesis/part1/lab2_part1.v Line: 12
+    Warning (13410): Pin "HEX3[7]" is stuck at GND File: C:/Users/Justin/Documents/School/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/synthesis/part1/lab2_part1.v Line: 12
+    Warning (13410): Pin "HEX4[0]" is stuck at GND File: C:/Users/Justin/Documents/School/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/synthesis/part1/lab2_part1.v Line: 13
+    Warning (13410): Pin "HEX4[1]" is stuck at GND File: C:/Users/Justin/Documents/School/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/synthesis/part1/lab2_part1.v Line: 13
+    Warning (13410): Pin "HEX4[2]" is stuck at GND File: C:/Users/Justin/Documents/School/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/synthesis/part1/lab2_part1.v Line: 13
+    Warning (13410): Pin "HEX4[3]" is stuck at GND File: C:/Users/Justin/Documents/School/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/synthesis/part1/lab2_part1.v Line: 13
+    Warning (13410): Pin "HEX4[4]" is stuck at GND File: C:/Users/Justin/Documents/School/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/synthesis/part1/lab2_part1.v Line: 13
+    Warning (13410): Pin "HEX4[5]" is stuck at GND File: C:/Users/Justin/Documents/School/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/synthesis/part1/lab2_part1.v Line: 13
+    Warning (13410): Pin "HEX4[6]" is stuck at GND File: C:/Users/Justin/Documents/School/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/synthesis/part1/lab2_part1.v Line: 13
+    Warning (13410): Pin "HEX4[7]" is stuck at GND File: C:/Users/Justin/Documents/School/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/synthesis/part1/lab2_part1.v Line: 13
+    Warning (13410): Pin "HEX5[0]" is stuck at GND File: C:/Users/Justin/Documents/School/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/synthesis/part1/lab2_part1.v Line: 14
+    Warning (13410): Pin "HEX5[1]" is stuck at GND File: C:/Users/Justin/Documents/School/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/synthesis/part1/lab2_part1.v Line: 14
+    Warning (13410): Pin "HEX5[2]" is stuck at GND File: C:/Users/Justin/Documents/School/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/synthesis/part1/lab2_part1.v Line: 14
+    Warning (13410): Pin "HEX5[3]" is stuck at GND File: C:/Users/Justin/Documents/School/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/synthesis/part1/lab2_part1.v Line: 14
+    Warning (13410): Pin "HEX5[4]" is stuck at GND File: C:/Users/Justin/Documents/School/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/synthesis/part1/lab2_part1.v Line: 14
+    Warning (13410): Pin "HEX5[5]" is stuck at GND File: C:/Users/Justin/Documents/School/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/synthesis/part1/lab2_part1.v Line: 14
+    Warning (13410): Pin "HEX5[6]" is stuck at GND File: C:/Users/Justin/Documents/School/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/synthesis/part1/lab2_part1.v Line: 14
+    Warning (13410): Pin "HEX5[7]" is stuck at GND File: C:/Users/Justin/Documents/School/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/synthesis/part1/lab2_part1.v Line: 14
+    Warning (13410): Pin "LEDR[0]" is stuck at GND File: C:/Users/Justin/Documents/School/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/synthesis/part1/lab2_part1.v Line: 20
+    Warning (13410): Pin "LEDR[1]" is stuck at GND File: C:/Users/Justin/Documents/School/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/synthesis/part1/lab2_part1.v Line: 20
+    Warning (13410): Pin "LEDR[2]" is stuck at GND File: C:/Users/Justin/Documents/School/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/synthesis/part1/lab2_part1.v Line: 20
+    Warning (13410): Pin "LEDR[3]" is stuck at GND File: C:/Users/Justin/Documents/School/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/synthesis/part1/lab2_part1.v Line: 20
+    Warning (13410): Pin "LEDR[4]" is stuck at GND File: C:/Users/Justin/Documents/School/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/synthesis/part1/lab2_part1.v Line: 20
+    Warning (13410): Pin "LEDR[5]" is stuck at GND File: C:/Users/Justin/Documents/School/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/synthesis/part1/lab2_part1.v Line: 20
+    Warning (13410): Pin "LEDR[6]" is stuck at GND File: C:/Users/Justin/Documents/School/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/synthesis/part1/lab2_part1.v Line: 20
+    Warning (13410): Pin "LEDR[7]" is stuck at GND File: C:/Users/Justin/Documents/School/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/synthesis/part1/lab2_part1.v Line: 20
+    Warning (13410): Pin "LEDR[8]" is stuck at GND File: C:/Users/Justin/Documents/School/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/synthesis/part1/lab2_part1.v Line: 20
+    Warning (13410): Pin "LEDR[9]" is stuck at GND File: C:/Users/Justin/Documents/School/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/synthesis/part1/lab2_part1.v Line: 20
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
 Warning (21074): Design contains 12 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "KEY[0]" File: C:/Users/jhsu2/OneDrive/Documents/UC Davis/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/synthesis/part1/lab2_part1.v Line: 17
-    Warning (15610): No output dependent on input pin "KEY[1]" File: C:/Users/jhsu2/OneDrive/Documents/UC Davis/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/synthesis/part1/lab2_part1.v Line: 17
-    Warning (15610): No output dependent on input pin "SW[0]" File: C:/Users/jhsu2/OneDrive/Documents/UC Davis/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/synthesis/part1/lab2_part1.v Line: 24
-    Warning (15610): No output dependent on input pin "SW[1]" File: C:/Users/jhsu2/OneDrive/Documents/UC Davis/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/synthesis/part1/lab2_part1.v Line: 24
-    Warning (15610): No output dependent on input pin "SW[2]" File: C:/Users/jhsu2/OneDrive/Documents/UC Davis/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/synthesis/part1/lab2_part1.v Line: 24
-    Warning (15610): No output dependent on input pin "SW[3]" File: C:/Users/jhsu2/OneDrive/Documents/UC Davis/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/synthesis/part1/lab2_part1.v Line: 24
-    Warning (15610): No output dependent on input pin "SW[4]" File: C:/Users/jhsu2/OneDrive/Documents/UC Davis/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/synthesis/part1/lab2_part1.v Line: 24
-    Warning (15610): No output dependent on input pin "SW[5]" File: C:/Users/jhsu2/OneDrive/Documents/UC Davis/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/synthesis/part1/lab2_part1.v Line: 24
-    Warning (15610): No output dependent on input pin "SW[6]" File: C:/Users/jhsu2/OneDrive/Documents/UC Davis/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/synthesis/part1/lab2_part1.v Line: 24
-    Warning (15610): No output dependent on input pin "SW[7]" File: C:/Users/jhsu2/OneDrive/Documents/UC Davis/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/synthesis/part1/lab2_part1.v Line: 24
-    Warning (15610): No output dependent on input pin "SW[8]" File: C:/Users/jhsu2/OneDrive/Documents/UC Davis/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/synthesis/part1/lab2_part1.v Line: 24
-    Warning (15610): No output dependent on input pin "SW[9]" File: C:/Users/jhsu2/OneDrive/Documents/UC Davis/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/synthesis/part1/lab2_part1.v Line: 24
+    Warning (15610): No output dependent on input pin "KEY[0]" File: C:/Users/Justin/Documents/School/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/synthesis/part1/lab2_part1.v Line: 17
+    Warning (15610): No output dependent on input pin "KEY[1]" File: C:/Users/Justin/Documents/School/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/synthesis/part1/lab2_part1.v Line: 17
+    Warning (15610): No output dependent on input pin "SW[0]" File: C:/Users/Justin/Documents/School/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/synthesis/part1/lab2_part1.v Line: 24
+    Warning (15610): No output dependent on input pin "SW[1]" File: C:/Users/Justin/Documents/School/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/synthesis/part1/lab2_part1.v Line: 24
+    Warning (15610): No output dependent on input pin "SW[2]" File: C:/Users/Justin/Documents/School/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/synthesis/part1/lab2_part1.v Line: 24
+    Warning (15610): No output dependent on input pin "SW[3]" File: C:/Users/Justin/Documents/School/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/synthesis/part1/lab2_part1.v Line: 24
+    Warning (15610): No output dependent on input pin "SW[4]" File: C:/Users/Justin/Documents/School/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/synthesis/part1/lab2_part1.v Line: 24
+    Warning (15610): No output dependent on input pin "SW[5]" File: C:/Users/Justin/Documents/School/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/synthesis/part1/lab2_part1.v Line: 24
+    Warning (15610): No output dependent on input pin "SW[6]" File: C:/Users/Justin/Documents/School/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/synthesis/part1/lab2_part1.v Line: 24
+    Warning (15610): No output dependent on input pin "SW[7]" File: C:/Users/Justin/Documents/School/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/synthesis/part1/lab2_part1.v Line: 24
+    Warning (15610): No output dependent on input pin "SW[8]" File: C:/Users/Justin/Documents/School/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/synthesis/part1/lab2_part1.v Line: 24
+    Warning (15610): No output dependent on input pin "SW[9]" File: C:/Users/Justin/Documents/School/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/synthesis/part1/lab2_part1.v Line: 24
 Info (21057): Implemented 70 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 12 input pins
     Info (21059): Implemented 58 output pins
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 82 warnings
-    Info: Peak virtual memory: 4736 megabytes
-    Info: Processing ended: Thu Jan 16 13:52:03 2025
+    Info: Peak virtual memory: 4737 megabytes
+    Info: Processing ended: Sun Jan 19 14:56:40 2025
     Info: Elapsed time: 00:00:07
     Info: Total CPU time (on all processors): 00:00:05
 

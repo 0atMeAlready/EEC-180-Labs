@@ -1,6 +1,6 @@
 Flow report for lab2_part1
-Thu Jan 16 13:52:16 2025
-Quartus Prime Version 19.1.0 Build 670 09/22/2019 SJ Lite Edition
+Sun Jan 19 14:56:55 2025
+Quartus Prime Version 19.1.0 Build 670 09/22/2019 SJ Standard Edition
 
 
 ---------------------
@@ -38,28 +38,28 @@ https://fpgasoftware.intel.com/eula.
 
 
 
-+----------------------------------------------------------------------------------+
-; Flow Summary                                                                     ;
-+------------------------------------+---------------------------------------------+
-; Flow Status                        ; Successful - Thu Jan 16 13:52:13 2025       ;
-; Quartus Prime Version              ; 19.1.0 Build 670 09/22/2019 SJ Lite Edition ;
-; Revision Name                      ; lab2_part1                                  ;
-; Top-level Entity Name              ; lab2_part1                                  ;
-; Family                             ; MAX 10                                      ;
-; Device                             ; 10M50DAF484C7G                              ;
-; Timing Models                      ; Final                                       ;
-; Total logic elements               ; 1 / 49,760 ( < 1 % )                        ;
-;     Total combinational functions  ; 1 / 49,760 ( < 1 % )                        ;
-;     Dedicated logic registers      ; 0 / 49,760 ( 0 % )                          ;
-; Total registers                    ; 0                                           ;
-; Total pins                         ; 70 / 360 ( 19 % )                           ;
-; Total virtual pins                 ; 0                                           ;
-; Total memory bits                  ; 0 / 1,677,312 ( 0 % )                       ;
-; Embedded Multiplier 9-bit elements ; 0 / 288 ( 0 % )                             ;
-; Total PLLs                         ; 0 / 4 ( 0 % )                               ;
-; UFM blocks                         ; 0 / 1 ( 0 % )                               ;
-; ADC blocks                         ; 0 / 2 ( 0 % )                               ;
-+------------------------------------+---------------------------------------------+
++--------------------------------------------------------------------------------------+
+; Flow Summary                                                                         ;
++------------------------------------+-------------------------------------------------+
+; Flow Status                        ; Successful - Sun Jan 19 14:56:51 2025           ;
+; Quartus Prime Version              ; 19.1.0 Build 670 09/22/2019 SJ Standard Edition ;
+; Revision Name                      ; lab2_part1                                      ;
+; Top-level Entity Name              ; lab2_part1                                      ;
+; Family                             ; MAX 10                                          ;
+; Device                             ; 10M50DAF484C7G                                  ;
+; Timing Models                      ; Final                                           ;
+; Total logic elements               ; 1 / 49,760 ( < 1 % )                            ;
+;     Total combinational functions  ; 1 / 49,760 ( < 1 % )                            ;
+;     Dedicated logic registers      ; 0 / 49,760 ( 0 % )                              ;
+; Total registers                    ; 0                                               ;
+; Total pins                         ; 70 / 360 ( 19 % )                               ;
+; Total virtual pins                 ; 0                                               ;
+; Total memory bits                  ; 0 / 1,677,312 ( 0 % )                           ;
+; Embedded Multiplier 9-bit elements ; 0 / 288 ( 0 % )                                 ;
+; Total PLLs                         ; 0 / 4 ( 0 % )                                   ;
+; UFM blocks                         ; 0 / 1 ( 0 % )                                   ;
+; ADC blocks                         ; 0 / 2 ( 0 % )                                   ;
++------------------------------------+-------------------------------------------------+
 
 
 +-----------------------------------------+
@@ -67,7 +67,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 01/16/2025 13:51:56 ;
+; Start date & time ; 01/19/2025 14:56:34 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; lab2_part1          ;
 +-------------------+---------------------+
@@ -78,7 +78,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------+----------------------------------------+---------------+-------------+------------+
 ; Assignment Name                     ; Value                                  ; Default Value ; Entity Name ; Section Id ;
 +-------------------------------------+----------------------------------------+---------------+-------------+------------+
-; COMPILER_SIGNATURE_ID               ; 10995770589201.173706431605244         ; --            ; --          ; --         ;
+; COMPILER_SIGNATURE_ID               ; 91755319171.173732739417072            ; --            ; --          ; --         ;
 ; PARTITION_COLOR                     ; -- (Not supported for targeted family) ; --            ; --          ; Top        ;
 ; PARTITION_FITTER_PRESERVATION_LEVEL ; -- (Not supported for targeted family) ; --            ; --          ; Top        ;
 ; PARTITION_NETLIST_TYPE              ; -- (Not supported for targeted family) ; --            ; --          ; Top        ;
@@ -90,11 +90,11 @@ https://fpgasoftware.intel.com/eula.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:07     ; 1.0                     ; 4721 MB             ; 00:00:05                           ;
-; Fitter               ; 00:00:05     ; 1.0                     ; 5637 MB             ; 00:00:02                           ;
-; Assembler            ; 00:00:03     ; 1.0                     ; 4692 MB             ; 00:00:00                           ;
-; Timing Analyzer      ; 00:00:02     ; 1.0                     ; 4829 MB             ; 00:00:00                           ;
-; Total                ; 00:00:17     ; --                      ; --                  ; 00:00:07                           ;
+; Analysis & Synthesis ; 00:00:06     ; 1.0                     ; 4722 MB             ; 00:00:05                           ;
+; Fitter               ; 00:00:08     ; 1.0                     ; 6218 MB             ; 00:00:05                           ;
+; Assembler            ; 00:00:02     ; 1.0                     ; 4693 MB             ; 00:00:01                           ;
+; Timing Analyzer      ; 00:00:03     ; 1.0                     ; 4930 MB             ; 00:00:02                           ;
+; Total                ; 00:00:19     ; --                      ; --                  ; 00:00:13                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
@@ -103,10 +103,10 @@ https://fpgasoftware.intel.com/eula.
 +----------------------+------------------+------------+------------+----------------+
 ; Module Name          ; Machine Hostname ; OS Name    ; OS Version ; Processor type ;
 +----------------------+------------------+------------+------------+----------------+
-; Analysis & Synthesis ; Samsung-school   ; Windows 10 ; 10.0       ; x86_64         ;
-; Fitter               ; Samsung-school   ; Windows 10 ; 10.0       ; x86_64         ;
-; Assembler            ; Samsung-school   ; Windows 10 ; 10.0       ; x86_64         ;
-; Timing Analyzer      ; Samsung-school   ; Windows 10 ; 10.0       ; x86_64         ;
+; Analysis & Synthesis ; DESKTOP-QIIQN1D  ; Windows 10 ; 10.0       ; x86_64         ;
+; Fitter               ; DESKTOP-QIIQN1D  ; Windows 10 ; 10.0       ; x86_64         ;
+; Assembler            ; DESKTOP-QIIQN1D  ; Windows 10 ; 10.0       ; x86_64         ;
+; Timing Analyzer      ; DESKTOP-QIIQN1D  ; Windows 10 ; 10.0       ; x86_64         ;
 +----------------------+------------------+------------+------------+----------------+
 
 
