@@ -1,0 +1,96 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dC:/intelFPGA_lite/19.1
+vfullAdder
+Z0 !s110 1737419498
+!i10b 1
+!s100 gF>[^z9_NSG7PG4Hm]?TH2
+IL2c2K`g7LHD2?D0]Db4^22
+Z1 VDg1SIo80bB@j0V0VzS_@n1
+Z2 dC:/Users/jhsu2/OneDrive/Documents/UC Davis/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/simulation/part3
+Z3 w1737419381
+Z4 8C:/Users/jhsu2/OneDrive/Documents/UC Davis/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/synthesis/part3/lab2_part3.v
+Z5 FC:/Users/jhsu2/OneDrive/Documents/UC Davis/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/synthesis/part3/lab2_part3.v
+L0 26
+Z6 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z7 !s108 1737419498.000000
+Z8 !s107 C:/Users/jhsu2/OneDrive/Documents/UC Davis/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/synthesis/part3/lab2_part3.v|
+Z9 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/jhsu2/OneDrive/Documents/UC Davis/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/synthesis/part3/lab2_part3.v|
+!i113 1
+Z10 o-work work
+Z11 tCvgOpt 0
+nfull@adder
+vlab2_part3
+R0
+!i10b 1
+!s100 fLK35NUzmZYfYJ@TD?MPN2
+I6IUKKd?Em>BkHm8bL`o3[1
+R1
+R2
+R3
+R4
+R5
+L0 6
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+R10
+R11
+vrippleAdder
+R0
+!i10b 1
+!s100 kAS9>C3QN_H28L@<;QUM_1
+I^_1@66aiTlm1fP1O7<d9@0
+R1
+R2
+R3
+R4
+R5
+L0 41
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+R10
+R11
+nripple@adder
+vtestbench
+R0
+!i10b 1
+!s100 @T1ZSZ57YIjWI<LmP@EeL3
+In3[<bz7V:ElT6ceE3kKnA1
+R1
+R2
+w1737419116
+8C:/Users/jhsu2/OneDrive/Documents/UC Davis/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/simulation/part3/tb_part3.v
+FC:/Users/jhsu2/OneDrive/Documents/UC Davis/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/simulation/part3/tb_part3.v
+L0 1
+R6
+r1
+!s85 0
+31
+R7
+!s107 C:/Users/jhsu2/OneDrive/Documents/UC Davis/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/simulation/part3/tb_part3.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/jhsu2/OneDrive/Documents/UC Davis/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/simulation/part3/tb_part3.v|
+!i113 1
+R10
+R11
