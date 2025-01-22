@@ -1,0 +1,10 @@
+{C:/Users/jhsu2/OneDrive/Documents/UC Davis/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/simulation/part2/tb_part2.v} {1 {vlog -work work -stats=none {C:/Users/jhsu2/OneDrive/Documents/UC Davis/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/simulation/part2/tb_part2.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module FA
+-- Compiling module multiplier
+-- Compiling module testbench
+
+Top level modules:
+	testbench
+
+} {} {}}

@@ -1,0 +1,79 @@
+module FA(
+    input A, B, Cin,
+    output S, Cout
+);
+    // Full Adder Logic
+    assign S = A ^ B ^ Cin;
+    assign Cout = (A & B) | (A & Cin) | (B & Cin);
+endmodule
+
+module multiplier(
+    input [3:0] A, B,
+    output [7:0] P
+);
+    wire [4:0] carry1, carry2, carry3;
+    wire [3:0] partial0, partial1, partial2, partial3;
+
+    // Generate partial products
+    assign partial0 = A & {4{B[0]}};
+    assign partial1 = A & {4{B[1]}};
+    assign partial2 = A & {4{B[2]}};
+    assign partial3 = A & {4{B[3]}};
+
+    // First stage of addition
+    assign P[0] = partial0[0];
+    FA FA1 (.A(partial0[1]), .B(partial1[0]), .Cin(1'b0), .S(P[1]), .Cout(carry1[0]));
+    FA FA2 (.A(partial0[2]), .B(partial1[1]), .Cin(carry1[0]), .S(P[2]), .Cout(carry1[1]));
+    FA FA3 (.A(partial0[3]), .B(partial1[2]), .Cin(carry1[1]), .S(P[3]), .Cout(carry1[2]));
+    FA FA4 (.A(1'b0), .B(partial1[3]), .Cin(carry1[2]), .S(P[4]), .Cout(carry1[3]));
+
+    // Second stage of addition
+    FA FA5 (.A(P[2]), .B(partial2[0]), .Cin(1'b0), .S(P[2]), .Cout(carry2[0]));
+    FA FA6 (.A(P[3]), .B(partial2[1]), .Cin(carry2[0]), .S(P[3]), .Cout(carry2[1]));
+    FA FA7 (.A(P[4]), .B(partial2[2]), .Cin(carry2[1]), .S(P[4]), .Cout(carry2[2]));
+    FA FA8 (.A(carry1[3]), .B(partial2[3]), .Cin(carry2[2]), .S(P[5]), .Cout(carry2[3]));
+
+    // Final stage of addition
+    FA FA9 (.A(P[4]), .B(partial3[0]), .Cin(1'b0), .S(P[4]), .Cout(carry3[0]));
+    FA FA10 (.A(P[5]), .B(partial3[1]), .Cin(carry3[0]), .S(P[5]), .Cout(carry3[1]));
+    FA FA11 (.A(carry2[3]), .B(partial3[2]), .Cin(carry3[1]), .S(P[6]), .Cout(carry3[2]));
+    assign P[7] = carry3[2] | partial3[3];
+endmodule
+
+module testbench;
+    reg [3:0] A, B;       // Inputs to the multiplier
+    wire [7:0] P;         // Output from the multiplier
+
+    // Instantiate the design under test (DUT)
+    multiplier MA (
+        .A(A),
+        .B(B),
+        .P(P)
+    );
+
+    integer i, j; // Loop variables
+
+    initial begin
+        // Monitor for debugging
+        $monitor("Time=%0t | A=%b B=%b P=%b", $time, A, B, P);
+
+        // Iterate through all possible combinations of A and B
+        for (i = 0; i < 16; i = i + 1) begin
+            for (j = 0; j < 16; j = j + 1) begin
+                A = i; // Assign values to A
+                B = j; // Assign values to B
+
+                #10; // Wait 10 time units for results to stabilize
+
+                // Check result
+                if (P !== (i * j)) begin
+                    $display("ERROR: A=%d B=%d P=%d (Expected %d)", 
+                              i, j, P, i * j);
+                end
+            end
+        end
+
+        $finish; // End simulation
+    end
+endmodule
+
