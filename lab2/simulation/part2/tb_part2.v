@@ -1,80 +1,71 @@
-module FA(
-
-	input A, B, Cin,
-	output S, Cout
-	
-	);
-	
-	assign S = A ^ B ^ Cin;
-	assign Cout = (A & B) | (A & Cin) | (B & Cin);
-	
+module full_adder (
+    input A, B, Cin,       // Inputs: two bits and carry-in
+    output Sum, Cout       // Outputs: sum and carry-out
+);
+    assign Sum = A ^ B ^ Cin;            // Sum is XOR of inputs
+    assign Cout = (A & B) | (B & Cin) | (A & Cin); // Carry-out logic
 endmodule
 
-module multiplier(
+module multiplier (
+    input [3:0] A, B,       // 4-bit inputs
+    output [7:0] P          // 8-bit product
+);
+    wire [15:0] pp;                 // Partial products
+    wire [7:0] sum1, sum2, sum3;    // Intermediate sums
+    wire [7:0] carry1, carry2, carry3; // Carry signals
 
-	input [3:0] A, B,
-	output [7:0] P
-	
-	);
-	
-	wire [4:0] carry1;
-	wire [4:0] carry2;
-	wire [4:0] carry3;
-	wire [11:0] in1;
-	wire [11:0] in2;
-	wire [11:0] S;
-	
-	//all the b[0] stuff
-	
-	assign P[0] = A[0] & B[0];
-	assign in1[0] = A[1] & B[0];
-	assign in1[1] = A[2] & B[0];
-	assign in1[2] = A[3] & B[0];
-	
-	//all the b[1] stuff
-	
-	assign carry1[0] = 0;
-	assign in2[0] = A[0] & B[1];
-	assign in2[1] = A[1] & B[1];
-	assign in2[2] = A[2] & B[1];
-	assign in2[3] = A[3] & B[1];
-	
-	FA FA0 (.A(in1[0]), .B(in2[0]), .Cin(carry1[0]), .S(P[1]), .Cout(carry1[1]));
-	FA FA1 (.A(in1[1]), .B(in2[1]), .Cin(carry1[1]), .S(in1[4]), .Cout(carry1[2]));
-	FA FA2 (.A(in1[2]), .B(in2[2]), .Cin(carry1[2]), .S(in1[5]), .Cout(carry1[3]));
-	FA FA3 (.A(0), .B(in2[3]), .Cin(carry1[3]), .S(in1[6]), .Cout(carry1[4]));
-	
-	//all the b[2] stuff
-	
-	assign carry2[0] = 0;
-	assign in1[7] = carry1[4];
-	assign in2[4] = S[1] & B[2];
-	assign in2[5] = S[2] & B[2];
-	assign in2[6] = S[3] & B[2];
-	assign in2[7] = A[3] & B[2];
+    // Generate partial products
+    assign pp[0]  = A[0] & B[0];
+    assign pp[1]  = A[1] & B[0];
+    assign pp[2]  = A[2] & B[0];
+    assign pp[3]  = A[3] & B[0];
+    assign pp[4]  = A[0] & B[1];
+    assign pp[5]  = A[1] & B[1];
+    assign pp[6]  = A[2] & B[1];
+    assign pp[7]  = A[3] & B[1];
+    assign pp[8]  = A[0] & B[2];
+    assign pp[9]  = A[1] & B[2];
+    assign pp[10] = A[2] & B[2];
+    assign pp[11] = A[3] & B[2];
+    assign pp[12] = A[0] & B[3];
+    assign pp[13] = A[1] & B[3];
+    assign pp[14] = A[2] & B[3];
+    assign pp[15] = A[3] & B[3];
 
-	FA FA4 (.A(in1[4]), .B(in2[4]), .Cin(carry2[0]), .S(P[2]), .Cout(carry2[1]));
-	FA FA5 (.A(in1[5]), .B(in2[5]), .Cin(carry2[1]), .S(in1[8]), .Cout(carry2[2]));
-	FA FA6 (.A(in1[6]), .B(in2[6]), .Cin(carry2[2]), .S(in1[9]), .Cout(carry2[3]));
-	FA FA7 (.A(in1[7]), .B(in2[7]), .Cin(carry2[3]), .S(in1[10]), .Cout(carry2[4]));
-	
-	//all the b[3] stuff
-	
-	assign carry3[0] = 0;
-	assign in1[11] = carry2[4];
-	assign in2[8] = S[4] & B[3];
-	assign in2[9] = S[5] & B[3];
-	assign in2[10] = S[6] & B[3];
-	assign in2[11] = A[3] & B[3];
+    // Row 1: Add pp[4:7] and shifted pp[0:3]
+    full_adder fa1_0 (pp[4], pp[1], 1'b0, sum1[1], carry1[1]);
+    full_adder fa1_1 (pp[5], pp[2], carry1[1], sum1[2], carry1[2]);
+    full_adder fa1_2 (pp[6], pp[3], carry1[2], sum1[3], carry1[3]);
+    full_adder fa1_3 (pp[7], 1'b0, carry1[3], sum1[4], carry1[4]);
+    assign sum1[0] = pp[0];
+    assign sum1[5] = carry1[4];
+    assign sum1[7:6] = 2'b00;
 
-	FA FA8 (.A(in1[8]), .B(in2[8]), .Cin(carry3[0]), .S(P[3]), .Cout(carry3[1]));
-	FA FA9 (.A(in1[9]), .B(in2[9]), .Cin(carry3[1]), .S(P[4]), .Cout(carry3[2]));
-	FA FA10 (.A(in1[10]), .B(in2[10]), .Cin(carry3[2]), .S(P[5]), .Cout(carry3[3]));
-	FA FA11 (.A(in1[11]), .B(in2[11]), .Cin(carry3[3]), .S(P[6]), .Cout(carry3[4]));
-	
-	assign P[7] = carry3[4];
-	
+    // Row 2: Add sum1[2:7] and shifted pp[8:11]
+    full_adder fa2_0 (sum1[2], pp[8], 1'b0, sum2[2], carry2[2]);
+    full_adder fa2_1 (sum1[3], pp[9], carry2[2], sum2[3], carry2[3]);
+    full_adder fa2_2 (sum1[4], pp[10], carry2[3], sum2[4], carry2[4]);
+    full_adder fa2_3 (sum1[5], pp[11], carry2[4], sum2[5], carry2[5]);
+    assign sum2[0] = sum1[0];
+    assign sum2[1] = sum1[1];
+    assign sum2[6] = carry2[5];
+    assign sum2[7] = 1'b0;
+
+    // Row 3: Add sum2[3:7] and shifted pp[12:15]
+    full_adder fa3_0 (sum2[3], pp[12], 1'b0, sum3[3], carry3[3]);
+    full_adder fa3_1 (sum2[4], pp[13], carry3[3], sum3[4], carry3[4]);
+    full_adder fa3_2 (sum2[5], pp[14], carry3[4], sum3[5], carry3[5]);
+    full_adder fa3_3 (sum2[6], pp[15], carry3[5], sum3[6], carry3[6]);
+    assign sum3[0] = sum2[0];
+    assign sum3[1] = sum2[1];
+    assign sum3[2] = sum2[2];
+    assign sum3[7] = carry3[6];
+
+    // Final product
+    assign P = sum3;
+
 endmodule
+
 
 module testbench;
     reg [3:0] A, B;       // Inputs to the multiplier
@@ -91,7 +82,7 @@ module testbench;
 
     initial begin
         // Monitor for debugging
-        $monitor("Time=%0t | A=%b B=%b P=%b", $time, A, B, P);
+        $monitor("A=%b B=%b P=%b", A, B, P);
 
         // Iterate through all possible combinations of A and B
         for (i = 0; i < 16; i = i + 1) begin
@@ -103,7 +94,7 @@ module testbench;
 
                 // Check result
                 if (P !== (A * B)) begin
-                    $display("ERROR: A=%d B=%d P=%d (Expected %d)", 
+                    $display("ERROR: A=%b B=%b P=%b (Expected %b)", 
                               A, B, P, A * B);
                 
             end

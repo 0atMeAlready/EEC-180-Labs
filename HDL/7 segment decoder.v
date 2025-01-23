@@ -8,6 +8,8 @@ module dec_7seg_decoder
     output [7:0] HEX1
 );
 
+//this uses hexadecimal as its number system, not binary
+
 // HEX0 displays 0-9
 assign HEX0[0] = (~SW[3] & SW[2] & ~SW[1] & ~SW[0]) | (~SW[3] & ~SW[2] & ~SW[1] & SW[0]) | (SW[3] & ~SW[2] & SW[1] & SW[0]) | (SW[3] & SW[2] & SW[1] & ~SW[0]);
 assign HEX0[1] = (~SW[3] & SW[2] & ~SW[1] & SW[0]) | (SW[3] & SW[2] & SW[1] & SW[0]) | (~SW[3] & SW[2] & SW[1] & ~SW[0]);
