@@ -88,7 +88,7 @@ module testbench;
         for (i = 0; i < 16; i = i + 1) begin
                 
 		A [3:0] = i; // Assign values to A
-                B [3:0] = i; // Assign values to B
+                B [3:0] = i + 1; // Assign values to B
 
                 #10; // Wait 10 time units for results to stabilize
 
