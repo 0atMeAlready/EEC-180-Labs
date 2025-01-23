@@ -41,7 +41,7 @@ module testbench;
 
             #10; // Wait 10 time units for results to stabilize
 
-        $display("input = %b, number of leading zeroes = %b", i, z);
+        $display("input = %b, number of leading zeroes = %b | %d", i, z, z);
 
         end
 
