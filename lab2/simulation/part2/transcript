@@ -1,225 +1,23 @@
-# Compile of tb_part2.v was successful.
 vsim -gui work.testbench
 # vsim -gui work.testbench 
-# Start time: 23:26:07 on Jan 22,2025
-# Loading work.testbench
-# Loading work.multiplier
-# Loading work.FA
-# ** Warning: (vsim-3015) C:/Users/jhsu2/OneDrive/Documents/UC Davis/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/simulation/part2/tb_part2.v(45): [PCDPC] - Port size (1) does not match connection size (32) for port 'A'. The port definition is at: C:/Users/jhsu2/OneDrive/Documents/UC Davis/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/simulation/part2/tb_part2.v(3).
-#    Time: 0 ps  Iteration: 0  Instance: /testbench/MA/FA3 File: C:/Users/jhsu2/OneDrive/Documents/UC Davis/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/simulation/part2/tb_part2.v
-add wave -position insertpoint  \
-sim:/testbench/P
-run
-# Time=0 | A=0000 B=0000 P=00000000
-# Time=10 | A=0001 B=0001 P=00000001
-# Time=20 | A=0010 B=0010 P=00000100
-# Time=30 | A=0011 B=0011 P=00001001
-# Time=40 | A=0100 B=0100 P=000xxx00
-# ERROR: A= 4 B= 4 P=  X (Expected  0)
-# Time=50 | A=0101 B=0101 P=00xxxx01
-# ERROR: A= 5 B= 5 P=  X (Expected  9)
-# Time=60 | A=0110 B=0110 P=00xxxx00
-# ERROR: A= 6 B= 6 P=  X (Expected  4)
-# Time=70 | A=0111 B=0111 P=00xxxx01
-# ERROR: A= 7 B= 7 P=  X (Expected  1)
-# Time=80 | A=1000 B=1000 P=01xxx000
-# ERROR: A= 8 B= 8 P=  X (Expected  0)
-# Time=90 | A=1001 B=1001 P=xxxxx001
-# ERROR: A= 9 B= 9 P=  X (Expected  1)
-run
-# Time=100 | A=1010 B=1010 P=xxxxx100
-# ERROR: A=10 B=10 P=  X (Expected  4)
-# Time=110 | A=1011 B=1011 P=xxxxx001
-# ERROR: A=11 B=11 P=  X (Expected  9)
-# Time=120 | A=1100 B=1100 P=xxxxxx00
-# ERROR: A=12 B=12 P=  X (Expected  0)
-# Time=130 | A=1101 B=1101 P=xxxxxx01
-# ERROR: A=13 B=13 P=  X (Expected  9)
-# Time=140 | A=1110 B=1110 P=xxxxxx00
-# ERROR: A=14 B=14 P=  X (Expected  4)
-# Time=150 | A=1111 B=1111 P=1xxxxx01
-# ERROR: A=15 B=15 P=  X (Expected  1)
-# ** Note: $finish    : C:/Users/Justin/Documents/School/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/simulation/part2/tb_part2.v(106)
-#    Time: 160 ps  Iteration: 0  Instance: /testbench
-# 1
-# Break in Module testbench at C:/Users/Justin/Documents/School/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/simulation/part2/tb_part2.v line 106
-vsim -gui work.testbench
-# End time: 23:26:34 on Jan 22,2025, Elapsed time: 0:00:27
-# Errors: 0, Warnings: 1
-# vsim -gui work.testbench 
-# Start time: 23:26:34 on Jan 22,2025
-# Loading work.testbench
-# Loading work.multiplier
-# Loading work.FA
-# ** Warning: (vsim-3015) C:/Users/jhsu2/OneDrive/Documents/UC Davis/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/simulation/part2/tb_part2.v(45): [PCDPC] - Port size (1) does not match connection size (32) for port 'A'. The port definition is at: C:/Users/jhsu2/OneDrive/Documents/UC Davis/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/simulation/part2/tb_part2.v(3).
-#    Time: 0 ps  Iteration: 0  Instance: /testbench/MA/FA3 File: C:/Users/jhsu2/OneDrive/Documents/UC Davis/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/simulation/part2/tb_part2.v
-# Compile of tb_part2.v was successful.
-vsim -gui work.testbench
-# End time: 23:26:59 on Jan 22,2025, Elapsed time: 0:00:25
-# Errors: 0, Warnings: 1
-# vsim -gui work.testbench 
-# Start time: 23:26:59 on Jan 22,2025
+# Start time: 21:52:41 on Jan 23,2025
 # Loading work.testbench
 # Loading work.multiplier
 # Loading work.full_adder
 add wave -position insertpoint  \
 sim:/testbench/P
 run
-# Time=0 | A=0000 B=0000 P=00000000
-# Time=10 | A=0001 B=0001 P=00000001
-# Time=20 | A=0010 B=0010 P=00010000
-# ERROR: A= 2 B= 2 P= 16 (Expected  4)
-# Time=30 | A=0011 B=0011 P=00100001
-# ERROR: A= 3 B= 3 P= 33 (Expected  9)
-# Time=40 | A=0100 B=0100 P=00100000
-# ERROR: A= 4 B= 4 P= 32 (Expected  0)
-# Time=50 | A=0101 B=0101 P=00111101
-# ERROR: A= 5 B= 5 P= 61 (Expected  9)
-# Time=60 | A=0110 B=0110 P=01100000
-# ERROR: A= 6 B= 6 P= 96 (Expected  4)
-# Time=70 | A=0111 B=0111 P=00001101
-# ERROR: A= 7 B= 7 P= 13 (Expected  1)
-# Time=80 | A=1000 B=1000 P=01000000
-# Time=90 | A=1001 B=1001 P=01101001
-# ERROR: A= 9 B= 9 P=105 (Expected  1)
-# Compile of tb_part2.v was successful.
-vsim -gui work.testbench
-# End time: 23:27:54 on Jan 22,2025, Elapsed time: 0:00:55
-# Errors: 0, Warnings: 0
-# vsim -gui work.testbench 
-# Start time: 23:27:54 on Jan 22,2025
-# Loading work.testbench
-# Loading work.multiplier
-# Loading work.full_adder
-add wave -position insertpoint  \
-sim:/testbench/P
-run
-# A=0000 B=0000 P=00000000
-# A=0001 B=0001 P=00000001
-# A=0010 B=0010 P=00010000
-# ERROR: A=0010 B=0010 P=00010000 (Expected 0100)
-# A=0011 B=0011 P=00100001
-# ERROR: A=0011 B=0011 P=00100001 (Expected 1001)
-# A=0100 B=0100 P=00100000
-# ERROR: A=0100 B=0100 P=00100000 (Expected 0000)
-# A=0101 B=0101 P=00111101
-# ERROR: A=0101 B=0101 P=00111101 (Expected 1001)
-# A=0110 B=0110 P=01100000
-# ERROR: A=0110 B=0110 P=01100000 (Expected 0100)
-# A=0111 B=0111 P=00001101
-# ERROR: A=0111 B=0111 P=00001101 (Expected 0001)
-# A=1000 B=1000 P=01000000
-# A=1001 B=1001 P=01101001
-# ERROR: A=1001 B=1001 P=01101001 (Expected 0001)
-# Compile of tb_part2.v was successful.
-vsim -gui work.testbench
-# End time: 23:29:42 on Jan 22,2025, Elapsed time: 0:01:48
-# Errors: 0, Warnings: 0
-# vsim -gui work.testbench 
-# Start time: 23:29:42 on Jan 22,2025
-# Loading work.testbench
-# Loading work.multiplier
-# Loading work.full_adder
-add wave -position insertpoint  \
-sim:/testbench/P
-run
-# A=0000 B=0000 P=00000000
-# A=0001 B=0001 P=00000001
-# A=0010 B=0010 P=00010000
-# ERROR: A=0010 B=0010 P=00010000 (Expected 0100)
-# A=0011 B=0011 P=00100001
-# ERROR: A=0011 B=0011 P=00100001 (Expected 1001)
-# A=0100 B=0100 P=00100000
-# ERROR: A=0100 B=0100 P=00100000 (Expected 0000)
-# A=0101 B=0101 P=00111101
-# ERROR: A=0101 B=0101 P=00111101 (Expected 1001)
-# A=0110 B=0110 P=01100000
-# ERROR: A=0110 B=0110 P=01100000 (Expected 0100)
-# A=0111 B=0111 P=00001101
-# ERROR: A=0111 B=0111 P=00001101 (Expected 0001)
-# A=1000 B=1000 P=01000000
-# A=1001 B=1001 P=01101001
-# ERROR: A=1001 B=1001 P=01101001 (Expected 0001)
-# Compile of tb_part2.v was successful.
-vsim -gui work.testbench
-# End time: 23:35:06 on Jan 22,2025, Elapsed time: 0:05:24
-# Errors: 0, Warnings: 0
-# vsim -gui work.testbench 
-# Start time: 23:35:06 on Jan 22,2025
-# Loading work.testbench
-# Loading work.multiplier
-# Loading work.full_adder
-add wave -position insertpoint sim:/testbench/*
-run
-# A=0000 B=0000 P=00000000
-# A=0001 B=0001 P=00000001
-# A=0010 B=0010 P=00010000
-# ERROR: A=0010 B=0010 P=00010000 (Expected 0100)
-# A=0011 B=0011 P=00100001
-# ERROR: A=0011 B=0011 P=00100001 (Expected 1001)
-# A=0100 B=0100 P=00100000
-# ERROR: A=0100 B=0100 P=00100000 (Expected 0000)
-# A=0101 B=0101 P=00111101
-# ERROR: A=0101 B=0101 P=00111101 (Expected 1001)
-# A=0110 B=0110 P=01100000
-# ERROR: A=0110 B=0110 P=01100000 (Expected 0100)
-# A=0111 B=0111 P=00001101
-# ERROR: A=0111 B=0111 P=00001101 (Expected 0001)
-# A=1000 B=1000 P=01000000
-# A=1001 B=1001 P=01101001
-# ERROR: A=1001 B=1001 P=01101001 (Expected 0001)
-# Compile of tb_part2.v was successful.
-# Compile of tb_part2.v was successful.
-# Compile of tb_part2.v was successful.
-vsim -gui work.testbench
-# End time: 23:40:07 on Jan 22,2025, Elapsed time: 0:05:01
-# Errors: 0, Warnings: 0
-# vsim -gui work.testbench 
-# Start time: 23:40:07 on Jan 22,2025
-# Loading work.testbench
-# Loading work.multiplier
-# Loading work.full_adder
-add wave -position insertpoint  \
-sim:/testbench/P
-run
-# A=0000 B=0000 P=00000000
-# A=0001 B=0001 P=00000001
-# A=0010 B=0010 P=00010000
-# ERROR: A=0010 B=0010 P=00010000 (Expected 0100)
-# A=0011 B=0011 P=00100001
-# ERROR: A=0011 B=0011 P=00100001 (Expected 1001)
-# A=0100 B=0100 P=00100000
-# ERROR: A=0100 B=0100 P=00100000 (Expected 0000)
-# A=0101 B=0101 P=00111101
-# ERROR: A=0101 B=0101 P=00111101 (Expected 1001)
-# A=0110 B=0110 P=01100000
-# ERROR: A=0110 B=0110 P=01100000 (Expected 0100)
-# A=0111 B=0111 P=00001101
-# ERROR: A=0111 B=0111 P=00001101 (Expected 0001)
-# A=1000 B=1000 P=01000000
-# A=1001 B=1001 P=01101001
-# ERROR: A=1001 B=1001 P=01101001 (Expected 0001)
-# Compile of tb_part2.v was successful.
-# Compile of tb_part2.v was successful.
-vsim -gui work.testbench
-# End time: 23:43:14 on Jan 22,2025, Elapsed time: 0:03:07
-# Errors: 0, Warnings: 0
-# vsim -gui work.testbench 
-# Start time: 23:43:14 on Jan 22,2025
-# Loading work.testbench
-# Loading work.multiplier
-# Loading work.full_adder
-add wave -position insertpoint sim:/testbench/*
-run
-# A=0000 B=0000 P=00000000
-# A=0001 B=0001 P=00000001
-# A=0010 B=0010 P=00000100
-# A=0011 B=0011 P=00001001
-# A=0100 B=0100 P=00010000
-# A=0101 B=0101 P=00011001
-# A=0110 B=0110 P=00100100
-# A=0111 B=0111 P=00110001
-# A=1000 B=1000 P=01000000
-# A=1001 B=1001 P=01010001
-# End time: 00:28:57 on Jan 23,2025, Elapsed time: 0:45:43
+# A=0000 B=0001 P=00000000
+# A=0001 B=0010 P=00000010
+# A=0010 B=0011 P=00000110
+# A=0011 B=0100 P=00001100
+# A=0100 B=0101 P=00010100
+# A=0101 B=0110 P=00011110
+# A=0110 B=0111 P=00101010
+# A=0111 B=1000 P=00111000
+# A=1000 B=1001 P=01001000
+# A=1001 B=1010 P=01011010
+quit -sim
+project open {C:/Users/Justin/Documents/School/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/simulation/part1/lab2_part1-2}
+# End time: 21:53:31 on Jan 23,2025, Elapsed time: 0:00:50
 # Errors: 0, Warnings: 0
