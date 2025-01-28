@@ -31,13 +31,13 @@ Z2 o-work work
 Z3 tCvgOpt 0
 n@f@a
 vfull_adder
-Z4 !s110 1737618187
+Z4 !s110 1737697921
 !i10b 1
 !s100 <O=KPked8_2f_IFPAT@hE3
 IL=lVH1KU6AS<^za_goJ9l3
 R0
 Z5 dC:/Users/Justin/Documents/School/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/simulation/part2
-Z6 w1737618153
+Z6 w1737680499
 Z7 8C:/Users/Justin/Documents/School/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/simulation/part2/tb_part2.v
 Z8 FC:/Users/Justin/Documents/School/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/simulation/part2/tb_part2.v
 L0 1
@@ -45,7 +45,7 @@ R1
 r1
 !s85 0
 31
-Z9 !s108 1737618187.000000
+Z9 !s108 1737697921.000000
 Z10 !s107 C:/Users/Justin/Documents/School/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/simulation/part2/tb_part2.v|
 Z11 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Justin/Documents/School/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/simulation/part2/tb_part2.v|
 !i113 1
@@ -96,8 +96,8 @@ R3
 vtestbench
 R4
 !i10b 1
-!s100 kn_E8F@8_Ym_?PY[:^8YM3
-ImMnLc`:6@68mG<:i[HlSa0
+!s100 N1n5VG_LoV4=lk:6m_FVR0
+I5T;acSTb0?1f9aRWEjd7H1
 R0
 R5
 R6
