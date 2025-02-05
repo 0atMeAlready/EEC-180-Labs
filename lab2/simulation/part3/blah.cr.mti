@@ -1,0 +1,20 @@
+{C:/Users/Justin/Documents/School/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab3/simulation/part 2/tb_partII.v} {1 {vlog -work work -stats=none {C:/Users/Justin/Documents/School/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab3/simulation/part 2/tb_partII.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module tb_partII
+
+Top level modules:
+	tb_partII
+
+} {} {}} {C:/Users/Justin/Documents/School/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab3/synthesis/part 2/partII.v} {2 {vlog -work work -stats=none {C:/Users/Justin/Documents/School/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab3/synthesis/part 2/partII.v}
+Model Technology ModelSim - Intel FPGA Edition vlog 10.5b Compiler 2016.10 Oct  5 2016
+-- Compiling module partII
+** Warning: C:/Users/Justin/Documents/School/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab3/synthesis/part 2/partII.v(24): (vlog-2600) [RDGN] - Redundant digits in numeric literal.
+-- Compiling module LED_DISPLAY
+-- Compiling module lzd
+-- Compiling module lzd8b
+
+Top level modules:
+	partII
+	LED_DISPLAY
+
+} {} {}}
