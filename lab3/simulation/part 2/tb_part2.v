@@ -45,7 +45,7 @@ module lzd8b (
 
         //check for edge case
         if (i8 == 8'b00000000) begin
-            z8 = 4'b0000;
+            z8 = 4'b1000;
         end
     end
 
@@ -65,8 +65,8 @@ module testbench;
 
     initial begin
         
-        for (j = 0; j < 10; j = j + 1) begin
-            i8 = $random;
+        for (j = 0; j < 256; j = j + 1) begin
+            i8 = j;
             
             #10;   
            
