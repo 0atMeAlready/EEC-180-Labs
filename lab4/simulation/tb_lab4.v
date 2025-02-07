@@ -1,8 +1,8 @@
-module fsm_mealy_101 (
+module fsm_mealy_101(
     input clk, reset, X,
     output reg Z
 );
-    // Define states using localparam instead of enum
+
     localparam S0 = 4'b0000,  // Initial state
                S1 = 4'b0001,  // Saw 1
                S2 = 4'b0010,  // Saw 10
@@ -15,7 +15,7 @@ module fsm_mealy_101 (
 
     reg [3:0] state, next_state;
 
-    // State transition logic
+    // State update logic
     always @(posedge clk or posedge reset) begin
         if (reset)
             state <= S0;
@@ -23,34 +23,87 @@ module fsm_mealy_101 (
             state <= next_state;
     end
 
-    // Next state logic
-    always @(*) begin
-        case (state)
-            S0: next_state = X ? S1 : S4;
-            S1: next_state = X ? S7 : S2;
-            S2: next_state = X ? S3 : S4;
-            S3: next_state = X ? S1 : S2;
-            S4: next_state = X ? S1 : S5;
-            S5: next_state = X ? S1 : S6;
-            S6: next_state = S6; // Lock Z = 0
-            S7: next_state = X ? S8 : S2;
-            S8: next_state = S8; // Lock Z = 1
-            default: next_state = S0;
+    // Next state logic and output logic (Mealy output)
+    always @(state, X) begin
+        case(state)
+            S0: begin
+                if (X)
+                    next_state = S1;
+                else
+                    next_state = S4;
+            end
+            
+            S1: begin
+                if (X)
+                    next_state = S7;
+                else
+                    next_state = S2;
+            end
+
+            S2: begin
+                if (X)
+                    next_state = S3;
+                else
+                    next_state = S5;
+            end
+
+            S3: begin
+               
+                if (X)
+                    next_state = S7;
+                else
+                    next_state = S2;
+            end
+
+            S4: begin
+                if (X)
+                    next_state = S1;
+                else
+                    next_state = S5;
+            end
+
+            S5: begin
+                if (X != 0)
+                    next_state = S1;
+                else
+                    next_state = S6;
+            end
+
+            S6: begin
+                if (X)
+                    next_state = S6;
+                else
+                    next_state = S6;  
+            end
+
+            S7: begin
+                if (X)
+                    next_state = S8;
+                else
+                    next_state = S2;
+            end
+
+            S8: begin
+          
+                next_state = S8;  // Lock Z to 1
+            end
+
+            default: begin
+                next_state = S0;
+            end
         endcase
     end
-
-    // Output logic (Mealy)
-    always @(*) begin
+	 
+	     always @(*) begin
         case (state)
-            S3: Z = 1; // Output 1 when 101 detected
-            S6: Z = 0; // Lock output at 0 if 000 detected
-            S8: Z = 1; // Lock output at 1 if 111 detected
+            S3: Z = 1;  // Output 1 when 101 detected
+            S6: Z = 0;  // Lock output at 0 if 000 detected
+            S8: Z = 1;  // Lock output at 1 if 111 detected
             default: Z = 0;
         endcase
     end
-endmodule
 
-`timescale 1ns / 1ps
+endmodule
 
 module fsm_mealy_101_tb;
     reg clk, reset, X;
@@ -65,7 +118,7 @@ module fsm_mealy_101_tb;
     );
 
     // Clock generation
-    always #5 clk = ~clk; // 10ns period
+    always #10 clk = ~clk; // 10ns period
 
     // Stimulus
     initial begin
@@ -77,19 +130,62 @@ module fsm_mealy_101_tb;
         
         reset = 0;
 
-        // Randomly generate 0s and 1s
-        repeat (100) begin
-            X = $random % 2; 
-            #10;
-        end
+        // Feed the sequence of bits (01010100101000101111)
+        X = 0; #10;  // Time 10ns, X = 0
+        #10 X = 1; #10;  // Time 20ns, X = 1
+        #10 X = 0; #10;  // Time 30ns, X = 0
+        #10 X = 1; #10;  // Time 40ns, X = 1
+        #10 X = 0; #10;  // Time 50ns, X = 0
+        #10 X = 1; #10;  // Time 60ns, X = 1
+        #10 X = 0; #10;  // Time 70ns, X = 0
+        #10 X = 0; #10;  // Time 80ns, X = 0
+        #10 X = 1; #10;  // Time 90ns, X = 1
+        #10 X = 0; #10;  // Time 100ns, X = 0
+        #10 X = 1; #10;  // Time 110ns, X = 1
+        #10 X = 0; #10;  // Time 120ns, X = 0
+        #10 X = 0; #10;  // Time 130ns, X = 0
+        #10 X = 0; #10;  // Time 130ns, X = 0
+        #10 X = 1; #10;  // Time 140ns, X = 1
+        #10 X = 0; #10;  // Time 150ns, X = 0
+        #10 X = 1; #10;  // Time 160ns, X = 1
+        #10 X = 1; #10;  // Time 170ns, X = 1
+        #10 X = 1; #10;  // Time 180ns, X = 1
+		  
+		  $display("reset occurs");
+		  
+		  reset = 1;
+		  #10;
+		  reset = 0;
+		  
+		  X = 0; #10;  // Time 10ns, X = 0
+        #10 X = 1; #10;  // Time 20ns, X = 1
+        #10 X = 0; #10;  // Time 30ns, X = 0
+        #10 X = 1; #10;  // Time 40ns, X = 1
+        #10 X = 0; #10;  // Time 50ns, X = 0
+        #10 X = 1; #10;  // Time 60ns, X = 1
+        #10 X = 0; #10;  // Time 70ns, X = 0
+        #10 X = 1; #10;  // Time 80ns, X = 1
+        #10 X = 0; #10;  // Time 90ns, X = 0
+        #10 X = 1; #10;  // Time 100ns, X = 1
+        #10 X = 1; #10;  // Time 110ns, X = 1
+        #10 X = 1; #10;  // Time 120ns, X = 1
+        #10 X = 0; #10;  // Time 130ns, X = 0
+        #10 X = 1; #10;  // Time 140ns, X = 1
+        #10 X = 0; #10;  // Time 150ns, X = 0
+        #10 X = 1; #10;  // Time 160ns, X = 1
+        #10 X = 0; #10;  // Time 170ns, X = 0
+        #10 X = 0; #10;  // Time 180ns, X = 0
+		  #10 X = 0; #10;  // Time 180ns, X = 0
+		  
 
-        // Finish simulation
-        $stop;
+        // End of stimulus
+        #20;
+        $stop; // Finish simulation
     end
 
     // Monitor signals
     initial begin
-        $monitor("X = %b | State = %b | Z = %b", X, uut.state, Z);
+        $monitor("Time = %0t | X = %b | State = %b | Z = %b", $time, X, uut.state, Z);
     end
 
 endmodule
