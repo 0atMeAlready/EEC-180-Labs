@@ -131,6 +131,9 @@ module fsm_mealy_101_tb;
         reset = 0;
 
         // Feed the sequence of bits (01010100101000101111)
+        
+        $display("Test case 1");
+        
         X = 0; #10;  // Time 10ns, X = 0
         #10 X = 1; #10;  // Time 20ns, X = 1
         #10 X = 0; #10;  // Time 30ns, X = 0
@@ -151,7 +154,7 @@ module fsm_mealy_101_tb;
         #10 X = 1; #10;  // Time 170ns, X = 1
         #10 X = 1; #10;  // Time 180ns, X = 1
 		  
-		  $display("reset occurs");
+		  $display("reset occurs, test case 2");
 		  
 		  reset = 1;
 		  #10;
