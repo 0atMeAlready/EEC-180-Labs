@@ -51,6 +51,92 @@ R9
 !i113 1
 R10
 R11
+vLED_DISPLAY
+Z12 !s110 1738310347
+!i10b 1
+!s100 U4AI2AZ>N;Sn6<i4@UcZg2
+Ij0eHE;jVMGdkaaRNR][Lj2
+R1
+Z13 dC:/Users/Justin/Documents/School/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/simulation/part3
+Z14 w1738299867
+Z15 8C:/Users/Justin/Documents/School/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab3/synthesis/part 2/partII.v
+Z16 FC:/Users/Justin/Documents/School/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab3/synthesis/part 2/partII.v
+L0 29
+R6
+r1
+!s85 0
+31
+Z17 !s108 1738310347.000000
+Z18 !s107 C:/Users/Justin/Documents/School/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab3/synthesis/part 2/partII.v|
+Z19 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Justin/Documents/School/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab3/synthesis/part 2/partII.v|
+!i113 1
+R10
+R11
+n@l@e@d_@d@i@s@p@l@a@y
+vlzd
+R12
+!i10b 1
+!s100 <ngS:kL6LdmCOo8HkmhlW1
+I32Dk5mTd0NAhWOjh9RIVK0
+R1
+R13
+R14
+R15
+R16
+L0 53
+R6
+r1
+!s85 0
+31
+R17
+R18
+R19
+!i113 1
+R10
+R11
+vlzd8b
+R12
+!i10b 1
+!s100 oL>M7Di<1z5I?`EIYcmbQ1
+Io7T1]]dTL]o9[@omOUUVT3
+R1
+R13
+R14
+R15
+R16
+L0 66
+R6
+r1
+!s85 0
+31
+R17
+R18
+R19
+!i113 1
+R10
+R11
+vpartII
+R12
+!i10b 1
+!s100 ibDHSoWeZaFhC@M:Z<38g0
+Ii:e;c6DCL^A]=aD4]c<5V2
+R1
+R13
+R14
+R15
+R16
+L0 1
+R6
+r1
+!s85 0
+31
+R17
+R18
+R19
+!i113 1
+R10
+R11
+npart@i@i
 vrippleAdder
 R0
 !i10b 1
@@ -73,6 +159,28 @@ R9
 R10
 R11
 nripple@adder
+vtb_partII
+R12
+!i10b 1
+!s100 d[46ZEPNYW[9Vk5mZFF1l3
+I0_G:8OB:dTG=d2Xd_PYWO1
+R1
+R13
+w1738310247
+8C:/Users/Justin/Documents/School/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab3/simulation/part 2/tb_partII.v
+FC:/Users/Justin/Documents/School/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab3/simulation/part 2/tb_partII.v
+L0 1
+R6
+r1
+!s85 0
+31
+R17
+!s107 C:/Users/Justin/Documents/School/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab3/simulation/part 2/tb_partII.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Justin/Documents/School/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab3/simulation/part 2/tb_partII.v|
+!i113 1
+R10
+R11
+ntb_part@i@i
 vtestbench
 R0
 !i10b 1
