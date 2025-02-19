@@ -1,5 +1,3 @@
-`include "/Users/jhsu2022/Documents/school/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab5/simulation/testvecs.txt"
-
 module RAM (
     input wire [3:0] Addr,
     input wire [7:0] MDI,
