@@ -1,0 +1,14 @@
+# Compile of tb_lab5.v was successful.
+vsim -gui work.tb_sqrt
+# vsim -gui work.tb_sqrt 
+# Start time: 16:39:18 on Feb 19,2025
+# Loading work.tb_sqrt
+# Loading work.RAM
+# Loading work.SquareRoot
+# Loading work.Controller
+run
+# ** Warning: (vsim-7) Failed to open readmem file "testvecs.txt" in read mode.
+# No such file or directory. (errno = ENOENT)    : C:/Users/Justin/Documents/School/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab5/simulation/tb_lab5.v(165)
+#    Time: 80 ps  Iteration: 0  Instance: /tb_sqrt
+# End time: 20:08:53 on Feb 19,2025, Elapsed time: 3:29:35
+# Errors: 0, Warnings: 1
