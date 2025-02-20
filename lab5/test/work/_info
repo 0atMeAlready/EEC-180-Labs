@@ -1,0 +1,97 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dC:/intelFPGA/19.1
+vController
+Z0 !s110 1740011947
+!i10b 1
+!s100 H`06`Dl5WY9[@Y0?N]<Ga1
+I:MNO;Gf96F_D3CLGJmA0?2
+Z1 VDg1SIo80bB@j0V0VzS_@n1
+Z2 dC:/Users/Justin/Documents/School/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab5/test
+Z3 w1740011875
+Z4 8C:/Users/Justin/Documents/School/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab5/simulation/tb_lab5.v
+Z5 FC:/Users/Justin/Documents/School/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab5/simulation/tb_lab5.v
+L0 53
+Z6 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z7 !s108 1740011947.000000
+Z8 !s107 C:/Users/Justin/Documents/School/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab5/simulation/tb_lab5.v|
+Z9 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Justin/Documents/School/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab5/simulation/tb_lab5.v|
+!i113 1
+Z10 o-work work
+Z11 tCvgOpt 0
+n@controller
+vRAM
+R0
+!i10b 1
+!s100 @QNSoYg:aVhJVUQlk^95[1
+IzN9il1?KPOlFfh>l[]XON0
+R1
+R2
+R3
+R4
+R5
+L0 1
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+R10
+R11
+n@r@a@m
+vSquareRoot
+R0
+!i10b 1
+!s100 mRVaL07g0_We8ehR[XUV=3
+I<O<3IngFE:A4zD5Q<m0PZ3
+R1
+R2
+R3
+R4
+R5
+L0 15
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+R10
+R11
+n@square@root
+vtb_sqrt
+R0
+!i10b 1
+!s100 6;0kJ1?B4J7=OSKgn@A2>3
+IkN78]4j=DJicE3I=W;bbY1
+R1
+R2
+R3
+R4
+R5
+L0 118
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+R10
+R11

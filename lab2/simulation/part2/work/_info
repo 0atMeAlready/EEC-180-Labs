@@ -9,66 +9,108 @@ z2
 cModel Technology
 dC:/Users/jhsu2/OneDrive/Documents/UC Davis/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/simulation/part1
 vFA
-Z0 !s110 1737505970
+!s110 1737505970
 !i10b 1
 !s100 OI;830hXlHlTzn=IY4L<P1
 I><MDz=7@eHfbgBR26:G[:2
-Z1 VDg1SIo80bB@j0V0VzS_@n1
-Z2 dC:/Users/jhsu2/OneDrive/Documents/UC Davis/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/simulation/part2
-Z3 w1737505948
-Z4 8C:/Users/jhsu2/OneDrive/Documents/UC Davis/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/simulation/part2/tb_part2.v
-Z5 FC:/Users/jhsu2/OneDrive/Documents/UC Davis/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/simulation/part2/tb_part2.v
+Z0 VDg1SIo80bB@j0V0VzS_@n1
+dC:/Users/jhsu2/OneDrive/Documents/UC Davis/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/simulation/part2
+w1737505948
+8C:/Users/jhsu2/OneDrive/Documents/UC Davis/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/simulation/part2/tb_part2.v
+FC:/Users/jhsu2/OneDrive/Documents/UC Davis/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/simulation/part2/tb_part2.v
 L0 1
-Z6 OV;L;10.5b;63
+Z1 OV;L;10.5b;63
 r1
 !s85 0
 31
-Z7 !s108 1737505970.000000
-Z8 !s107 C:/Users/jhsu2/OneDrive/Documents/UC Davis/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/simulation/part2/tb_part2.v|
-Z9 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/jhsu2/OneDrive/Documents/UC Davis/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/simulation/part2/tb_part2.v|
+!s108 1737505970.000000
+!s107 C:/Users/jhsu2/OneDrive/Documents/UC Davis/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/simulation/part2/tb_part2.v|
+!s90 -reportprogress|300|-work|work|-stats=none|C:/Users/jhsu2/OneDrive/Documents/UC Davis/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/simulation/part2/tb_part2.v|
 !i113 1
-Z10 o-work work
-Z11 tCvgOpt 0
+Z2 o-work work
+Z3 tCvgOpt 0
 n@f@a
+vfull_adder
+Z4 !s110 1737697921
+!i10b 1
+!s100 <O=KPked8_2f_IFPAT@hE3
+IL=lVH1KU6AS<^za_goJ9l3
+R0
+Z5 dC:/Users/Justin/Documents/School/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/simulation/part2
+Z6 w1737680499
+Z7 8C:/Users/Justin/Documents/School/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/simulation/part2/tb_part2.v
+Z8 FC:/Users/Justin/Documents/School/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/simulation/part2/tb_part2.v
+L0 1
+R1
+r1
+!s85 0
+31
+Z9 !s108 1737697921.000000
+Z10 !s107 C:/Users/Justin/Documents/School/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/simulation/part2/tb_part2.v|
+Z11 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/Justin/Documents/School/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/simulation/part2/tb_part2.v|
+!i113 1
+R2
+R3
 vmultiplier
-R0
-!i10b 1
-!s100 <Z;A?6d5@dDR[KcTOY@Cl1
-Im]WEEb_W;<3cf]aO=a0=e2
-R1
-R2
-R3
 R4
+!i10b 1
+!s100 7Ia9SXcb]Z^P=YO`1zZCQ2
+I>WoLfk8OL=E]nMFd=Skn>1
+R0
 R5
-L0 13
 R6
+R7
+R8
+L0 9
+R1
 r1
 !s85 0
 31
-R7
-R8
 R9
-!i113 1
 R10
 R11
+!i113 1
+R2
+R3
+vmultiplier_4bit
+!s110 1737617995
+!i10b 1
+!s100 _M6]z5ZzI:dX3]EBG_W8R1
+IV=Z4`NH:2gYz8f02^@b9:1
+R0
+R5
+w1737617881
+R7
+R8
+L0 9
+R1
+r1
+!s85 0
+31
+!s108 1737617995.000000
+R10
+R11
+!i113 1
+R2
+R3
 vtestbench
-R0
-!i10b 1
-!s100 5Bl2SNQTLSkVLLg7`_R[C0
-I`H]OZ>^kdGFP@MZMJGdVm1
-R1
-R2
-R3
 R4
+!i10b 1
+!s100 N1n5VG_LoV4=lk:6m_FVR0
+I5T;acSTb0?1f9aRWEjd7H1
+R0
 R5
-L0 79
 R6
+R7
+R8
+L0 70
+R1
 r1
 !s85 0
 31
-R7
-R8
 R9
-!i113 1
 R10
 R11
+!i113 1
+R2
+R3
