@@ -9,7 +9,7 @@ z2
 cModel Technology
 dC:/intelFPGA_lite/19.1
 vfullAdder
-Z0 !s110 1737419498
+Z0 !s110 1737672881
 !i10b 1
 !s100 gF>[^z9_NSG7PG4Hm]?TH2
 IL2c2K`g7LHD2?D0]Db4^22
@@ -23,7 +23,7 @@ Z6 OV;L;10.5b;63
 r1
 !s85 0
 31
-Z7 !s108 1737419498.000000
+Z7 !s108 1737672881.000000
 Z8 !s107 C:/Users/jhsu2/OneDrive/Documents/UC Davis/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/synthesis/part3/lab2_part3.v|
 Z9 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/jhsu2/OneDrive/Documents/UC Davis/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/synthesis/part3/lab2_part3.v|
 !i113 1
@@ -88,7 +88,7 @@ R6
 r1
 !s85 0
 31
-R7
+!s108 1737672880.000000
 !s107 C:/Users/jhsu2/OneDrive/Documents/UC Davis/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/simulation/part3/tb_part3.v|
 !s90 -reportprogress|300|-work|work|-stats=none|C:/Users/jhsu2/OneDrive/Documents/UC Davis/2024-2025/Winter Quarter/EEC 180/EEC-180-Labs/lab2/simulation/part3/tb_part3.v|
 !i113 1
