@@ -1,194 +1,198 @@
-module fsm_mealy_101(
-    input clk, reset, X,
-    output reg Z
+// RAM module
+module RAM (
+    input wire [3:0] Addr,
+    input wire [7:0] MDI,
+    input wire Write_Enable, CLK,
+    output reg [7:0] MDO
 );
+    reg [7:0] memory [15:0];
+    always @(posedge CLK) begin
+        if (Write_Enable)
+            memory[Addr] <= MDI;
+        MDO <= memory[Addr];
+    end
+endmodule
 
-    localparam S0 = 4'b0000,  // Initial state
-               S1 = 4'b0001,  // Saw 1
-               S2 = 4'b0010,  // Saw 10
-               S3 = 4'b0011,  // Saw 101 (Z = 1)
-               S4 = 4'b0100,  // Saw 0
-               S5 = 4'b0101,  // Saw 00
-               S6 = 4'b0110,  // Saw 000 (Lock Z = 0)
-               S7 = 4'b0111,  // Saw 11
-               S8 = 4'b1000;  // Saw 111 (Lock Z = 1)
+module SquareRoot (
+    input wire CLK, ResetN, St,
+    input wire [7:0] MDI,
+    output reg Done,
+    output reg [3:0] Sqrt
+);
+    reg [7:0] memory [15:0];
+    reg [3:0] Addr;
+    reg [7:0] R;
+    reg [3:0] count;
+    reg [7:0] odd;
+    reg calculating;
+    reg [1:0] state, next_state;
 
-    reg [3:0] state, next_state;
-
-    // State update logic
-    always @(posedge clk or posedge reset) begin
-        if (reset)
-            state <= S0;
+    // Define state machine states using localparam
+    localparam IDLE = 2'b00, START = 2'b01, WAIT = 2'b10, WRITE = 2'b11;
+    
+    always @(posedge CLK or negedge ResetN) begin
+        if (!ResetN)
+            state <= IDLE;
         else
             state <= next_state;
     end
-
-    // Next state logic and output logic (Mealy output)
-    always @(state, X) begin
-        case(state)
-            S0: begin
-                if (X)
-                    next_state = S1;
+    
+    // Next state logic
+    always @(*) begin
+        case (state)
+            IDLE: begin
+                if (St)
+                    next_state = START;  // Start processing when St is asserted
                 else
-                    next_state = S4;
+                    next_state = IDLE;
             end
             
-            S1: begin
-                if (X)
-                    next_state = S7;
+            START: begin
+                next_state = WAIT;  // Move to WAIT after starting the calculation
+            end
+            
+            WAIT: begin
+                if (Done)
+                    next_state = WRITE;  // Once done, move to WRITE to store result
                 else
-                    next_state = S2;
+                    next_state = WAIT;  // Stay in WAIT until Done is asserted
             end
-
-            S2: begin
-                if (X)
-                    next_state = S3;
+            
+            WRITE: begin
+                if (Addr == 4'b1111)  // If last input has been processed, go back to IDLE
+                    next_state = IDLE;
                 else
-                    next_state = S5;
+                    next_state = START;  // Otherwise, go back to START for the next input
             end
-
-            S3: begin
-               
-                if (X)
-                    next_state = S7;
-                else
-                    next_state = S2;
-            end
-
-            S4: begin
-                if (X)
-                    next_state = S1;
-                else
-                    next_state = S5;
-            end
-
-            S5: begin
-                if (X != 0)
-                    next_state = S1;
-                else
-                    next_state = S6;
-            end
-
-            S6: begin
-                if (X)
-                    next_state = S6;
-                else
-                    next_state = S6;  
-            end
-
-            S7: begin
-                if (X)
-                    next_state = S8;
-                else
-                    next_state = S2;
-            end
-
-            S8: begin
-          
-                next_state = S8;  // Lock Z to 1
-            end
-
-            default: begin
-                next_state = S0;
-            end
+            
+            default: next_state = IDLE;
         endcase
     end
-	 
-	     always @(*) begin
-        case (state)
-            S3: Z = 1;  // Output 1 when 101 detected
-            S6: Z = 0;  // Lock output at 0 if 000 detected
-            S8: Z = 1;  // Lock output at 1 if 111 detected
-            default: Z = 0;
-        endcase
+    
+    // State machine actions
+    always @(posedge CLK or negedge ResetN) begin
+        if (!ResetN) begin
+            Addr <= 0;
+            Done <= 0;
+            Sqrt <= 4'b0;
+            R <= 0;
+            odd <= 1;
+            count <= 0;
+            calculating <= 0;
+        end else begin
+            case (state)
+                IDLE: begin
+                    Done <= 0;
+                    if (St) begin
+                        // Store the input to memory at current address
+                        memory[Addr] <= MDI;
+                        Addr <= Addr + 1;
+                    end
+                end
+                
+                START: begin
+                    // Start the square root calculation for the input value
+                    R <= memory[Addr-1];  // Take the last stored input value
+                    odd <= 8'd1;
+                    count <= 4'b0;
+                    calculating <= 1;
+                    Done <= 0;
+                end
+                
+                WAIT: begin
+                    if (calculating) begin
+                        // Square root calculation loop
+                        if (R >= odd) begin
+                            R <= R - odd;
+                            odd <= odd + 8'd2;
+                            count <= count + 1;
+                        end else begin
+                            Sqrt <= count;
+                            Done <= 1;
+                            calculating <= 0;
+                        end
+                    end
+                end
+                
+                WRITE: begin
+                    // Once the square root is calculated, store it back in memory
+                    memory[Addr-1] <= {4'b0, Sqrt};
+                    if (Addr == 4'b1111) begin
+                        Addr <= 0;  // Reset address after last input
+                    end
+                end
+            endcase
+        end
     end
-
 endmodule
 
-module fsm_mealy_101_tb;
-    reg clk, reset, X;
-    wire Z;
-
-    // Instantiate FSM
-    fsm_mealy_101 uut (
-        .clk(clk),
-        .reset(reset),
-        .X(X),
-        .Z(Z)
+// Testbench for SquareRoot
+module tb_sqrt;
+    parameter num_vectors = 16;
+    reg CLK, ResetN, St;
+    wire Done;
+    reg [7:0] MDI;
+    wire [3:0] Sqrt;
+    reg [7:0] vectors [0:num_vectors-1];
+    integer i;
+    wire [7:0] MDO_wire;
+    reg [3:0] Addr;
+    reg Write_Enable;
+    
+    RAM ram_inst (
+        .Addr(Addr),
+        .MDI(MDI),
+        .Write_Enable(Write_Enable),
+        .CLK(CLK),
+        .MDO(MDO_wire)
     );
-
-    // Clock generation
-    always #10 clk = ~clk; // 10ns period
-
-    // Stimulus
+    
+    SquareRoot sqrt_inst (
+        .CLK(CLK),
+        .ResetN(ResetN),
+        .St(St),
+        .MDI(MDO_wire),  // Change N to MDI
+        .Done(Done),
+        .Sqrt(Sqrt)
+    );
+    
     initial begin
-        // Initialize signals
-        clk = 0;
-        reset = 1;
-        X = 0;
-        #10;
-        
-        reset = 0;
-
-        // Feed the sequence of bits (01010100101000101111)
-        
-        $display("Test case 1");
-        
-        X = 0; #10;  // Time 10ns, X = 0
-        #10 X = 1; #10;  // Time 20ns, X = 1
-        #10 X = 0; #10;  // Time 30ns, X = 0
-        #10 X = 1; #10;  // Time 40ns, X = 1
-        #10 X = 0; #10;  // Time 50ns, X = 0
-        #10 X = 1; #10;  // Time 60ns, X = 1
-        #10 X = 0; #10;  // Time 70ns, X = 0
-        #10 X = 0; #10;  // Time 80ns, X = 0
-        #10 X = 1; #10;  // Time 90ns, X = 1
-        #10 X = 0; #10;  // Time 100ns, X = 0
-        #10 X = 1; #10;  // Time 110ns, X = 1
-        #10 X = 0; #10;  // Time 120ns, X = 0
-        #10 X = 0; #10;  // Time 130ns, X = 0
-        #10 X = 0; #10;  // Time 130ns, X = 0
-        #10 X = 1; #10;  // Time 140ns, X = 1
-        #10 X = 0; #10;  // Time 150ns, X = 0
-        #10 X = 1; #10;  // Time 160ns, X = 1
-        #10 X = 1; #10;  // Time 170ns, X = 1
-        #10 X = 1; #10;  // Time 180ns, X = 1
-		  
-		  $display("reset occurs, test case 2");
-		  
-		  reset = 1;
-		  #10;
-		  reset = 0;
-		  
-		  X = 0; #10;  // Time 10ns, X = 0
-        #10 X = 1; #10;  // Time 20ns, X = 1
-        #10 X = 0; #10;  // Time 30ns, X = 0
-        #10 X = 1; #10;  // Time 40ns, X = 1
-        #10 X = 0; #10;  // Time 50ns, X = 0
-        #10 X = 1; #10;  // Time 60ns, X = 1
-        #10 X = 0; #10;  // Time 70ns, X = 0
-        #10 X = 1; #10;  // Time 80ns, X = 1
-        #10 X = 0; #10;  // Time 90ns, X = 0
-        #10 X = 1; #10;  // Time 100ns, X = 1
-        #10 X = 1; #10;  // Time 110ns, X = 1
-        #10 X = 1; #10;  // Time 120ns, X = 1
-        #10 X = 0; #10;  // Time 130ns, X = 0
-        #10 X = 1; #10;  // Time 140ns, X = 1
-        #10 X = 0; #10;  // Time 150ns, X = 0
-        #10 X = 1; #10;  // Time 160ns, X = 1
-        #10 X = 0; #10;  // Time 170ns, X = 0
-        #10 X = 0; #10;  // Time 180ns, X = 0
-		  #10 X = 0; #10;  // Time 180ns, X = 0
-		  
-
-        // End of stimulus
-        #20;
-        $stop; // Finish simulation
+        CLK = 0;
+        forever #20 CLK = ~CLK;
     end
-
-    // Monitor signals
+    
     initial begin
-        $monitor("Time = %0t | X = %b | State = %b | Z = %b", $time, X, uut.state, Z);
+        ResetN = 0;
+        St = 0;
+        #80 ResetN = 1;  // Initial reset release
+        
+        // Initializing the vectors
+        vectors[0]  = 8'b00000001; // 1
+        vectors[1]  = 8'b00000100; // 4
+        vectors[2]  = 8'b00001001; // 9
+        vectors[3]  = 8'b00010000; // 16
+        vectors[4]  = 8'b00011001; // 25
+        vectors[5]  = 8'b00100100; // 36
+        vectors[6]  = 8'b00110001; // 49
+        vectors[7]  = 8'b01000000; // 64
+        vectors[8]  = 8'b00000000; // 0
+        vectors[9]  = 8'b00000110; // 6
+        vectors[10] = 8'b00001101; // 13
+        vectors[11] = 8'b00010101; // 21
+        vectors[12] = 8'b00011011; // 27
+        vectors[13] = 8'b00101100; // 44
+        vectors[14] = 8'b11100001; // 225
+        vectors[15] = 8'b11111111; // 255
+        
+        // Test each vector
+        for (i = 0; i < num_vectors; i = i + 1) begin
+            MDI = vectors[i];
+            $display("Starting computation for RAM[%0d] = 0x%h", i, vectors[i]);
+            #20 St = 1;        // Assert the St signal
+            wait (Done == 1);  // Wait for the calculation to complete
+            $display("Input=0x%h, SqRt=0x%h", MDI, Sqrt);
+            #20 St = 0;        // Deassert the St signal
+            wait (Done == 0);  // Wait until Done is cleared
+        end
     end
-
 endmodule
