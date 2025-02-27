@@ -81,7 +81,7 @@ module MAC_tb;
             if (out !== expected_out) begin
                 $display("ERROR Expected %d, Got %d", expected_out, out);
             end else begin
-                $display("MAC output correct (%d)", out);
+                $display("MAC input %d, %d, MAC output correct (%d)", inA, inB,out);
             end
         end
         
