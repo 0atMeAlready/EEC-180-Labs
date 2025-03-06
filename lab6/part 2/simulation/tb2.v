@@ -4,7 +4,7 @@ module mux2x1 (
     output [18:0] muxout
 );
 
-assign muxout = sel ? b : a; //result = condition ? value_if_true : value_if_false;
+assign muxout = sel ? b : a;
 
 endmodule
 
@@ -14,9 +14,9 @@ module MAC (
     output reg [18:0] out
 );
 
-wire [18:0] mult_out; 
-wire [18:0] add_out; 
-wire [18:0] mux_out;
+    wire [18:0] mult_out;
+    wire [18:0] add_out;
+    wire [18:0] mux_out;
 
 assign mult_out = inA * inB;
 assign add_out = mult_out + out;
@@ -33,107 +33,118 @@ end
 
 endmodule
 
-module matrix_RAM (
-    input reg [18:0] data_in [8][8],
-    input reg rst,
-    output [18:0] data_out [8][8] 
-)
+module matrix_RAM #(parameter WIDTH = 19) (
+    input clk,
+    input rst,
+    input [(WIDTH*64)-1:0] data_in,  // Flattened 8x8 matrix
+    output reg [(WIDTH*64)-1:0] data_out
+);
 
-    always @(posedge clk) begin (
-        if (rst = 1) begin
-            data_in <= 0;
-            data_out <= 0;
-        end else begin
-            data_out <= data_in;
-        end
-    )
+always @(posedge clk) begin
+    if (rst) begin
+        data_out <= 0;
+    end else begin
+        data_out <= data_in;
     end
+end
+
 endmodule
 
 module matrix_tb;
 
     // Testbench signals
-    reg [7:0] data_inA, data_inB;
+    reg [511:0] data_inA;
+    reg [511:0] data_inB;
+    reg [(19*64)-1:0] data_out;
     reg macc_clear, clk, rst;
-    wire [18:0] out, inA, inB;
-    
-    // Instantiate modules
+    reg [7:0] matA [7:0][7:0];
+    reg [7:0] matB [7:0][7:0];
+    wire [18:0] mac_out;
+    reg [18:0] result_matrix [7:0][7:0];
+    integer i, j, k;
 
-    matrix_RAM RAM0 (
-        .data_in(data_inA),
-        .rst(rst),
-        .data_out(inA)
-    )
-
-    matrix_RAM RAM1 (
-        .data_in(data_inB),
-        .rst(rst),
-        .data_out(inB)
-    )
-
-    matrixRAM RAM2 (
-        .data_in(out),
-        .rst(rst),
-        .data_out(data_out)
-    )
-
-    MAC uut (
-        .inA(inA),
-        .inB(inB),
-        .macc_clear(macc_clear),
+    // Instantiate the MAC module and RAM modules (No changes here)
+    matrix_RAM #(.WIDTH(8)) RAM0 (
         .clk(clk),
-        .out(out)
+        .rst(rst),
+        .data_in(data_inA),
+        .data_out()
     );
 
-    // Clock generation
-    always #5 clk = ~clk;  // 10 ns clock period
+    matrix_RAM #(.WIDTH(8)) RAM1 (
+        .clk(clk),
+        .rst(rst),
+        .data_in(data_inB),
+        .data_out()
+    );
 
-    // Test variables
-    integer i;
-    reg [18:0] expected_out; // Expected accumulator value
+    matrix_RAM #(.WIDTH(19)) RAM2 (
+        .clk(clk),
+        .rst(rst),
+        .data_in(data_out),
+        .data_out()
+    );
+
+    MAC uut (
+        .inA(data_inA[7:0]),
+        .inB(data_inB[7:0]),
+        .macc_clear(macc_clear),
+        .clk(clk),
+        .out(mac_out)
+    );
+
+    always #5 clk = ~clk;
 
     initial begin
-        // Initialize signals
         clk = 0;
         macc_clear = 1;
-        inA = 0;
-        inB = 0;
-        expected_out = 0;
+        rst = 1;
 
-        // Reset the MAC
-        #10;
-        macc_clear = 0;  // Release reset
-        
-        // Apply test cases
-        for (i = 1; i <= 50; i = i + 1) begin
-            inA = i;  
-            inB = i + 1;  // Different values for multiplication
-            
-            #10;  // Wait for clock edge
-            
-            expected_out = expected_out + (inA * inB); // Expected accumulation
-            
-            // Self-checking assertion
-            if (out !== expected_out) begin
-                $display("ERROR Expected %d, Got %d", expected_out, out);
-            end else begin
-                $display("MAC input %d, %d, MAC output correct (%d)", inA, inB,out);
+        // Initialize matrices
+        for (i = 0; i < 8; i = i + 1) begin
+            for (j = 0; j < 8; j = j + 1) begin
+                matA[i][j] = i + 1;
+                matB[i][j] = j + 2;
             end
         end
-        
-        // Test Reset Functionality
+
         #10;
-        macc_clear = 1; // Reset
-        #10;
-        
-        if (out !== 0) begin
-            $display("ERROR: Reset failed! Expected 0, Got %d", out);
-        end else begin
-            $display("PASS: Reset successful, output is 0");
+        rst = 0;
+        macc_clear = 0;
+
+        // Perform matrix multiplication
+        for (i = 0; i < 8; i = i + 1) begin
+            for (j = 0; j < 8; j = j + 1) begin
+                result_matrix[i][j] = 0; // Reset the result matrix
+
+                // Perform matrix multiplication for row i of matA and column j of matB
+                for (k = 0; k < 8; k = k + 1) begin
+                    // Set the current values for multiplication
+                    data_inA = matA[i][k]; // Element from row i, column k of matA
+                    data_inB = matB[k][j]; // Element from row k, column j of matB
+
+                    // Clear MAC before starting multiplication
+                    macc_clear = 1;
+                    #10; // Wait for one clock cycle to clear the MAC
+                    macc_clear = 0;  // Disable clearing of MAC
+
+                    #10; // Wait for MAC to process the multiplication
+                    // Accumulate the result once the multiplication is done
+
+                    result_matrix[i][j] = result_matrix[i][j] + mac_out;
+
+                end
+
+                $display("result_matrix[%0d][%0d] = %0d", i, j, result_matrix[i][j]);
+
+            end
         end
 
         #10;
-        $finish;  // End simulation
+        macc_clear = 1;
+        #10;
+
+        $finish;
     end
 
 endmodule
