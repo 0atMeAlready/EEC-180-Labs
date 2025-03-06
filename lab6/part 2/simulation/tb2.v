@@ -33,14 +33,50 @@ end
 
 endmodule
 
-module MAC_tb;
+module matrix_RAM (
+    input reg [18:0] data_in [8][8],
+    input reg rst,
+    output [18:0] data_out [8][8] 
+)
+
+    always @(posedge clk) begin (
+        if (rst = 1) begin
+            data_in <= 0;
+            data_out <= 0;
+        end else begin
+            data_out <= data_in;
+        end
+    )
+    end
+endmodule
+
+module matrix_tb;
 
     // Testbench signals
-    reg [7:0] inA, inB;
-    reg macc_clear, clk;
-    wire [18:0] out;
+    reg [7:0] data_inA, data_inB;
+    reg macc_clear, clk, rst;
+    wire [18:0] out, inA, inB;
     
-    // Instantiate MAC module
+    // Instantiate modules
+
+    matrix_RAM RAM0 (
+        .data_in(data_inA),
+        .rst(rst),
+        .data_out(inA)
+    )
+
+    matrix_RAM RAM1 (
+        .data_in(data_inB),
+        .rst(rst),
+        .data_out(inB)
+    )
+
+    matrixRAM RAM2 (
+        .data_in(out),
+        .rst(rst),
+        .data_out(data_out)
+    )
+
     MAC uut (
         .inA(inA),
         .inB(inB),
@@ -69,7 +105,7 @@ module MAC_tb;
         macc_clear = 0;  // Release reset
         
         // Apply test cases
-        for (i = 1; i <= 5; i = i + 1) begin
+        for (i = 1; i <= 50; i = i + 1) begin
             inA = i;  
             inB = i + 1;  // Different values for multiplication
             
