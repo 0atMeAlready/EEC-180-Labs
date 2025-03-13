@@ -1,3 +1,5 @@
+`timescale 1ns/10ps
+
 module mux2x1 (
     input signed [18:0] a, b,
     input sel,
