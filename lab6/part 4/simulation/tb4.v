@@ -42,7 +42,7 @@ endmodule
 module matrix_RAM #(parameter WIDTH = 19) (
     input clk,
     input rst,
-    input signed [(WIDTH*64)-1:0] data_in,  // Signed data input
+    input signed [(WIDTH*64)-1:0] data_in,
     output reg signed [(WIDTH*64)-1:0] data_out
 );
 
@@ -58,15 +58,16 @@ endmodule
 
 module matrix_tb;
 
-    // Testbench signals
     reg signed [7:0] matA [0:63];
     reg signed [7:0] matB [0:63];
     reg signed [511:0] data_inA;
     reg signed [511:0] data_inB;
     reg signed [(19*64)-1:0] data_out;
     reg macc_clear, clk, rst, start;
-    wire done0, done1;  // Done signals for MAC units
-    wire signed [18:0] mac_out0, mac_out1;
+
+    wire signed [18:0] mac_out0, mac_out1, mac_out2, mac_out3;
+    wire done0, done1, done2, done3;
+
     reg signed [18:0] result_matrix [0:63];
     reg signed [18:0] matrixC [0:63];
     integer i, j, k;
@@ -94,7 +95,7 @@ module matrix_tb;
         .data_out()
     );
 
-    // Instantiate two parallel MAC units
+    // Instantiate 4 parallel MAC units
     MAC MAC0 (
         .inA(data_inA[7:0]),
         .inB(data_inB[7:0]),
@@ -115,6 +116,26 @@ module matrix_tb;
         .done(done1)
     );
 
+    MAC MAC2 (
+        .inA(data_inA[23:16]),
+        .inB(data_inB[23:16]),
+        .macc_clear(macc_clear),
+        .clk(clk),
+        .start(start),
+        .out(mac_out2),
+        .done(done2)
+    );
+
+    MAC MAC3 (
+        .inA(data_inA[31:24]),
+        .inB(data_inB[31:24]),
+        .macc_clear(macc_clear),
+        .clk(clk),
+        .start(start),
+        .out(mac_out3),
+        .done(done3)
+    );
+
     // Clock generation
     always #5 clk = ~clk;
 
@@ -125,7 +146,7 @@ module matrix_tb;
         start = 0;
         clock_count = 0;
 
-        // Load matrices (signed values for two's complement)
+        // Load matrices (signed values)
         $readmemb("ram_a_init.txt", matA);
         $readmemb("ram_b_init.txt", matB);
 
@@ -143,35 +164,45 @@ module matrix_tb;
             end
         end
 
-        // Start signal assertion
         #10;
-        start = 1;
+        start = 1; // Start MAC processing
 
-        // Perform matrix multiplication using parallel MACs
+        // Perform matrix multiplication using 4 parallel MACs
         for (j = 0; j < 8; j = j + 1) begin
-            for (i = 0; i < 8; i = i + 2) begin
+            for (i = 0; i < 8; i = i + 4) begin
                 result_matrix[i * 8 + j] = 0;
                 result_matrix[(i + 1) * 8 + j] = 0;
+                result_matrix[(i + 2) * 8 + j] = 0;
+                result_matrix[(i + 3) * 8 + j] = 0;
 
                 for (k = 0; k < 8; k = k + 1) begin
-                    // Load data for MAC0 and MAC1
-                    data_inA[7:0] = matA[k * 8 + i];
-                    data_inB[7:0] = matB[j * 8 + k];
+                    // Load data for 4 MAC units
+                    data_inA[7:0]   = matA[k * 8 + i];
+                    data_inB[7:0]   = matB[j * 8 + k];
 
-                    data_inA[15:8] = matA[k * 8 + (i + 1)];
-                    data_inB[15:8] = matB[j * 8 + k];
+                    data_inA[15:8]  = matA[k * 8 + (i + 1)];
+                    data_inB[15:8]  = matB[j * 8 + k];
 
-                    // Clear MACs before starting multiplication
+                    data_inA[23:16] = matA[k * 8 + (i + 2)];
+                    data_inB[23:16] = matB[j * 8 + k];
+
+                    data_inA[31:24] = matA[k * 8 + (i + 3)];
+                    data_inB[31:24] = matB[j * 8 + k];
+
+                    // Clear MAC before multiplication
                     macc_clear = 1;
                     #10;
                     macc_clear = 0;
 
                     // Wait for MAC units to finish
                     #10;
-                    result_matrix[i * 8 + j] = result_matrix[i * 8 + j] + mac_out0;
-                    result_matrix[(i + 1) * 8 + j] = result_matrix[(i + 1) * 8 + j] + mac_out1;
+                    if (done0 && done1 && done2 && done3) begin
+                        result_matrix[i * 8 + j]       = result_matrix[i * 8 + j]       + mac_out0;
+                        result_matrix[(i + 1) * 8 + j] = result_matrix[(i + 1) * 8 + j] + mac_out1;
+                        result_matrix[(i + 2) * 8 + j] = result_matrix[(i + 2) * 8 + j] + mac_out2;
+                        result_matrix[(i + 3) * 8 + j] = result_matrix[(i + 3) * 8 + j] + mac_out3;
+                    end
 
-                    // Increment clock count
                     clock_count = clock_count + 1;
                 end
             end
@@ -191,13 +222,13 @@ module matrix_tb;
         end
 
         $display("\nTotal Clock Cycles: %d", clock_count);
-        
-        $display("Status of MACs: MAC0 = %d, MAC1 = %d, [1 = done with calculations]", done0, done1);
+
+        $display("Status of MACs: MAC0 = %d, MAC1 = %d, MAC2 = %d, MAC3 = %d, [1 = done with calculations]", done0, done1, done2, done3);
 
         #10;
         macc_clear = 1;
         #10;
-
+        
         $finish;
     end
 
