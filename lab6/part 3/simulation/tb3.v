@@ -177,11 +177,6 @@ module matrix_tb;
             end
         end
 
-        // Check if MACs are done
-        if (done0 && done1) begin
-            $display("Status of MACs: MAC0 = %d, MAC1 = %d, [1 = done with calculations]", done0, done1);
-        end
-
         // Display results
         $display("\nExpected Result:");
         for (i = 0; i < 8; i = i + 1) begin
@@ -196,6 +191,11 @@ module matrix_tb;
         end
 
         $display("\nTotal Clock Cycles: %d", clock_count);
+        
+        // Check if MACs are done
+        if (done0 && done1) begin
+            $display("Status of MACs: MAC0 = %d, MAC1 = %d, [1 = done with calculations]", done0, done1);
+        end
 
         #10;
         macc_clear = 1;

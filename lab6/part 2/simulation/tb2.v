@@ -12,8 +12,9 @@ endmodule
 
 module MAC (
     input signed [7:0] inA, inB,   // Input as signed 8-bit values
-    input macc_clear, clk,
-    output reg signed [18:0] out   // Output as signed 19-bit value
+    input macc_clear, clk, start,
+    output reg signed [18:0] out,  // Output as signed 19-bit value
+    output reg done
 );
 
     wire signed [18:0] mult_out;
@@ -28,8 +29,12 @@ module MAC (
     always @(posedge clk) begin
         if (macc_clear) begin
             out <= 0;
-        end else begin
+            done <= 0;
+        end else if (start) begin
             out <= mux_out;
+            done <= 1;  // Signal done when computation is completed
+        end else begin
+            done <= 0;
         end
     end
 
@@ -60,14 +65,15 @@ module matrix_tb;
     reg [511:0] data_inA;
     reg [511:0] data_inB;
     reg [(19*64)-1:0] data_out;
-    reg macc_clear, clk, rst;
+    reg macc_clear, clk, rst, start;
     wire signed [18:0] mac_out;         // Signed 19-bit output from MAC
-    reg signed [18:0] result_matrix [0:7][0:7]; // 8x8 result matrix, each element is signed 19 bits
-    reg signed [18:0] matrixC [0:7][0:7]; // Store expected results (fix this to use matrixC)
+    wire done;                          // MAC done signal
+    reg signed [18:0] result_matrix [0:7][0:7]; // 8x8 result matrix
+    reg signed [18:0] matrixC [0:7][0:7]; // Expected results
     integer i, j, k;
     integer clock_count;
 
-    // Instantiate the MAC module and RAM modules (No changes here)
+    // Instantiate RAM modules
     matrix_RAM #(.WIDTH(8)) RAM0 (
         .clk(clk),
         .rst(rst),
@@ -89,12 +95,15 @@ module matrix_tb;
         .data_out()
     );
 
+    // Instantiate MAC module
     MAC MAC0 (
         .inA(data_inA[7:0]),
         .inB(data_inB[7:0]),
         .macc_clear(macc_clear),
         .clk(clk),
-        .out(mac_out)
+        .start(start),
+        .out(mac_out),
+        .done(done)
     );
 
     always #5 clk = ~clk;
@@ -103,11 +112,12 @@ module matrix_tb;
         clk = 0;
         macc_clear = 1;
         rst = 1;
+        start = 0;
         clock_count = 0;
 
         // Read matrices from files in column-major order
-        $readmemb("ram_a_init.txt", matA); // Assuming the matrix is stored column-major in the file
-        $readmemb("ram_b_init.txt", matB); // Assuming the matrix is stored column-major in the file
+        $readmemb("ram_a_init.txt", matA); 
+        $readmemb("ram_b_init.txt", matB); 
 
         #10;
         rst = 0;
@@ -116,31 +126,37 @@ module matrix_tb;
         // Compute expected result in matrixC
         for (i = 0; i < 8; i = i + 1) begin
             for (j = 0; j < 8; j = j + 1) begin
-                matrixC[i][j] = 0;  // Initialize the expected result matrix
+                matrixC[i][j] = 0;  // Initialize expected result
                 for (k = 0; k < 8; k = k + 1) begin
-                    matrixC[i][j] = matrixC[i][j] + matA[k][i] * matB[j][k]; // Column-major order multiplication
+                    matrixC[i][j] = matrixC[i][j] + matA[k][i] * matB[j][k];
                 end
             end
         end
 
-        // Perform matrix multiplication (modified for column-major access)
-        for (j = 0; j < 8; j = j + 1) begin // Iterate over columns for column-major order
+        // Perform matrix multiplication
+        for (j = 0; j < 8; j = j + 1) begin 
             for (i = 0; i < 8; i = i + 1) begin
-                result_matrix[i][j] = 0; // Reset the result matrix
+                result_matrix[i][j] = 0;
 
-                // Perform matrix multiplication for row i of matA and column j of matB
                 for (k = 0; k < 8; k = k + 1) begin
-                    // Set the current values for multiplication from column-major order
-                    data_inA = matA[k][i]; // Element from column k, row i of matA (swapped index for column-major)
-                    data_inB = matB[j][k]; // Element from row k, column j of matB
+                    // Load values from matrices
+                    data_inA = matA[k][i]; 
+                    data_inB = matB[j][k]; 
 
-                    // Clear MAC before starting multiplication
+                    // Clear MAC before starting
                     macc_clear = 1;
-                    #10; // Wait for one clock cycle to clear the MAC
-                    macc_clear = 0;  // Disable clearing of MAC
+                    #10; 
+                    macc_clear = 0;
 
-                    #10; // Wait for MAC to process the multiplication
-                    // Accumulate the result once the multiplication is done
+                    // Start MAC computation
+                    start = 1;
+                    #10;
+                    start = 0;
+
+                    // Wait for MAC to signal done
+                    wait (done);
+
+                    // Accumulate result
                     result_matrix[i][j] = result_matrix[i][j] + mac_out;
 
                     // Increment clock count
@@ -149,23 +165,25 @@ module matrix_tb;
             end
         end
 
-        // Print Expected and Actual Results in the Lab Manual Format
-        // Expected matrix printed from matrixC
+        // Print Expected and Actual Results
         $display("\nExpected Result:");
         for (i = 0; i < 8; i = i + 1) begin
             $display(matrixC[i][0], matrixC[i][1], matrixC[i][2], matrixC[i][3],
                      matrixC[i][4], matrixC[i][5], matrixC[i][6], matrixC[i][7]);
         end
         
-        // Print the Generated Result from RAM
         $display("\nGenerated Result:");
         for (i = 0; i < 8; i = i + 1) begin
             $display(result_matrix[i][0], result_matrix[i][1], result_matrix[i][2], result_matrix[i][3],
                      result_matrix[i][4], result_matrix[i][5], result_matrix[i][6], result_matrix[i][7]);
         end
 
-        // Display the number of clock cycles
         $display("\nTotal Clock Cycles: %d", clock_count);
+
+        // Check if MACs are done
+        if (done == 1) begin
+            $display("Status of MACs: MAC0 = %d, [1 = done with calculations]", done);
+        end
 
         #10;
         macc_clear = 1;
